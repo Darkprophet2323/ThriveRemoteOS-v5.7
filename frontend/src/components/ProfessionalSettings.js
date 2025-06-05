@@ -275,16 +275,17 @@ const ProfessionalSettings = () => {
   return (
     <div className="app-content">
       {/* Header */}
-      <div className="flex justify-between items-center mb-6">
+      <div className="flex justify-between items-center mb-4">
         <div>
-          <h1 className="text-2xl font-bold text-primary mb-1">System Settings</h1>
-          <p className="text-sm text-muted">Configure your ThriveRemoteOS experience</p>
+          <h1 className="text-lg font-bold text-primary mb-1">System Settings</h1>
+          <p className="text-xs text-muted">Configure your ThriveRemoteOS experience</p>
         </div>
         <div className="flex gap-2">
           {hasChanges && (
             <button 
               className="btn-primary"
               onClick={saveSettings}
+              style={{ fontSize: '0.7rem', padding: '6px 12px' }}
             >
               Save Changes
             </button>
@@ -292,12 +293,14 @@ const ProfessionalSettings = () => {
           <button 
             className="btn-secondary"
             onClick={exportSettings}
+            style={{ fontSize: '0.7rem', padding: '6px 12px' }}
           >
             Export
           </button>
           <button 
             className="btn-subtle"
             onClick={resetSettings}
+            style={{ fontSize: '0.7rem', padding: '6px 12px' }}
           >
             Reset
           </button>
