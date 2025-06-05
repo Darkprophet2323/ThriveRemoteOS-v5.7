@@ -324,7 +324,7 @@ const ThriveRemoteDesktop = () => {
   }
 
   return (
-    <div className="desktop-environment" onContextMenu={handleRightClick}>
+    <div className={`desktop-environment ${isMobile ? 'mobile-mode' : ''}`} onContextMenu={handleRightClick}>
       {/* Professional News Ticker */}
       <LuxuryNewsTicker />
 
