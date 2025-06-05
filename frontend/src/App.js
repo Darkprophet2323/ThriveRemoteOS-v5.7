@@ -423,6 +423,12 @@ const ThriveRemoteDesktop = () => {
             <span>🔗</span>Useful Links
           </div>
           <div className="context-menu-item" onClick={() => { 
+            handleIconClick('UK Natural Wonders', '🏔️', 'UKNaturalWondersViewer', 420, 315); 
+            setRightClickMenu({ show: false, x: 0, y: 0 }); 
+          }}>
+            <span>🏔️</span>UK Natural Wonders
+          </div>
+          <div className="context-menu-item" onClick={() => { 
             handleIconClick('Virtual Pets', '🐾', 'VirtualPetsHub', 245, 175); 
             setRightClickMenu({ show: false, x: 0, y: 0 }); 
           }}>
