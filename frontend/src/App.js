@@ -237,31 +237,31 @@ const ThriveRemoteDesktop = () => {
           onClick={(e) => e.stopPropagation()}
         >
           <div className="context-menu-item" onClick={() => { 
-            handleIconClick('AI Job Links Portal', '🤖', 'AIJobLinksPortal', 560, 420); 
+            handleIconClick('AI Job Links Portal', '🤖', 'AIJobLinksPortal', 420, 315); 
             setRightClickMenu({ show: false, x: 0, y: 0 }); 
           }}>
             <span>🤖</span>AI Job Links Portal
           </div>
           <div className="context-menu-item" onClick={() => { 
-            handleIconClick('Useful Links', '🔗', 'UsefulLinks', 400, 350); 
+            handleIconClick('Useful Links', '🔗', 'UsefulLinks', 350, 280); 
             setRightClickMenu({ show: false, x: 0, y: 0 }); 
           }}>
             <span>🔗</span>Useful Links
           </div>
           <div className="context-menu-item" onClick={() => { 
-            handleIconClick('Virtual Pets', '🐾', 'VirtualPetsHub', 280, 210); 
+            handleIconClick('Virtual Pets', '🐾', 'VirtualPetsHub', 245, 175); 
             setRightClickMenu({ show: false, x: 0, y: 0 }); 
           }}>
             <span>🐾</span>Virtual Pets
           </div>
           <div className="context-menu-item" onClick={() => { 
-            handleIconClick('System Status', '📊', 'SystemStatusApp', 420, 315); 
+            handleIconClick('System Status', '📊', 'SystemStatusApp', 350, 245); 
             setRightClickMenu({ show: false, x: 0, y: 0 }); 
           }}>
             <span>📊</span>System Status
           </div>
           <div className="context-menu-item" onClick={() => { 
-            handleIconClick('Calculator', '🧮', 'CalculatorApp', 224, 350); 
+            handleIconClick('Calculator', '🧮', 'CalculatorApp', 210, 280); 
             setRightClickMenu({ show: false, x: 0, y: 0 }); 
           }}>
             <span>🧮</span>Calculator
