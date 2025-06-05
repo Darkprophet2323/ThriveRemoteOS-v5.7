@@ -391,15 +391,33 @@ class ThriveRemoteOSAPITester(unittest.TestCase):
         print(f"User settings API endpoint tested successfully")
         print(f"Settings can be stored in user profile for persistence")
 
-    def test_window_positioning(self):
-        """Test window positioning configuration in frontend"""
-        # This is a frontend feature, but we can verify the system is operational
-        response = requests.get(f"{self.base_url}/")
+    def test_virtual_pets(self):
+        """Test the virtual pets API endpoint"""
+        response = requests.get(f"{self.base_url}/virtual-pets")
         self.assertEqual(response.status_code, 200)
+        data = response.json()
         
-        # Verify system is running and can support window management
-        print("Backend is operational for window positioning tests")
-        print("Window positioning will be tested via frontend Playwright tests")
+        self.assertIn("message", data)
+        self.assertIn("pets", data)
+        self.assertIn("total_pets", data)
+        
+        pets = data.get("pets", {})
+        self.assertGreaterEqual(len(pets), 2)
+        
+        # Check for cosmic pets
+        self.assertIn("cosmic_pets", pets)
+        cosmic_pets = pets.get("cosmic_pets", {})
+        self.assertIn("description", cosmic_pets)
+        self.assertIn("features", cosmic_pets)
+        
+        # Check for desktop pets
+        self.assertIn("desktop_pets", pets)
+        desktop_pets = pets.get("desktop_pets", {})
+        self.assertIn("description", desktop_pets)
+        self.assertIn("features", desktop_pets)
+        
+        print(f"Virtual Pets - Total: {data.get('total_pets')}")
+        print(f"Pet Types: {', '.join(pets.keys())}")
 
 def run_tests():
     # Create a test suite
