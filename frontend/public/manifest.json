@@ -1,0 +1,70 @@
+{
+  "short_name": "ThriveOS",
+  "name": "ThriveRemoteOS - AI Job Entertainment Platform",
+  "description": "Mobile-ready AI-powered desktop environment for remote job searching and productivity",
+  "icons": [
+    {
+      "src": "favicon.ico",
+      "sizes": "64x64 32x32 24x24 16x16",
+      "type": "image/x-icon"
+    },
+    {
+      "src": "logo192.png",
+      "type": "image/png",
+      "sizes": "192x192",
+      "purpose": "maskable any"
+    },
+    {
+      "src": "logo512.png",
+      "type": "image/png",
+      "sizes": "512x512",
+      "purpose": "maskable any"
+    }
+  ],
+  "start_url": ".",
+  "display": "standalone",
+  "theme_color": "#ffffff",
+  "background_color": "#ffffff",
+  "orientation": "any",
+  "scope": "/",
+  "lang": "en",
+  "categories": ["productivity", "business", "utilities"],
+  "prefer_related_applications": false,
+  "shortcuts": [
+    {
+      "name": "AI Job Portal",
+      "short_name": "Jobs",
+      "description": "Access AI-powered job search",
+      "url": "/?app=jobs",
+      "icons": [{ "src": "logo192.png", "sizes": "192x192" }]
+    },
+    {
+      "name": "Calculator",
+      "short_name": "Calc",
+      "description": "Quick calculations",
+      "url": "/?app=calculator",
+      "icons": [{ "src": "logo192.png", "sizes": "192x192" }]
+    },
+    {
+      "name": "Virtual Pets",
+      "short_name": "Pets",
+      "description": "Entertainment with virtual pets",
+      "url": "/?app=pets",
+      "icons": [{ "src": "logo192.png", "sizes": "192x192" }]
+    }
+  ],
+  "screenshots": [
+    {
+      "src": "logo512.png",
+      "type": "image/png",
+      "sizes": "512x512",
+      "form_factor": "wide"
+    },
+    {
+      "src": "logo192.png",
+      "type": "image/png",
+      "sizes": "192x192",
+      "form_factor": "narrow"
+    }
+  ]
+}
