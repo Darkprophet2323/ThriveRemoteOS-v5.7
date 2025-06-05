@@ -4,7 +4,7 @@ import "./animations.css";
 import { BrowserRouter, Routes, Route } from "react-router-dom";
 import axios from "axios";
 import WaitressJobPortal from "./components/WaitressJobPortal";
-import LuxuryMusicPlayer from "./components/LuxuryMusicPlayer";
+// Music player removed as per user request
 import LuxuryNewsTicker from "./components/LuxuryNewsTicker";
 import NotepadApp from "./components/NotepadApp";
 import VaultApp from "./components/VaultApp";
