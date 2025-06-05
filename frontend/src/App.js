@@ -182,13 +182,14 @@ const ThriveRemoteDesktop = () => {
 
   // Time update effect
 
-  // Mobile-specific window sizing
+  // Mobile-responsive window sizing
   const getMobileWindowSize = (defaultWidth, defaultHeight) => {
     if (!isMobile) return { width: defaultWidth, height: defaultHeight };
     
+    // On mobile, use full viewport dimensions
     return {
       width: window.innerWidth,
-      height: window.innerHeight - 74 // Account for mobile taskbar and status
+      height: window.innerHeight - 78 // Account for news ticker (28px) + taskbar (50px)
     };
   };
 
