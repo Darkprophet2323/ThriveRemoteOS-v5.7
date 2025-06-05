@@ -5,93 +5,44 @@ const SleekDesktopIcons = ({ onIconClick, sounds }) => {
     {
       id: 'ai-job-portal',
       icon: '🤖',
-      label: 'AI Job Links',
+      label: 'AI Jobs',
       component: 'AIJobLinksPortal',
-      size: { width: 800, height: 600 }
-    },
-    {
-      id: 'ai-portal',
-      icon: '🎭',
-      label: 'AI Career Portal',
-      component: 'WaitressJobPortal',
-      size: { width: 500, height: 400 }
-    },
-    {
-      id: 'virtual-pets',
-      icon: '🐾',
-      label: 'Virtual Pets',
-      component: 'VirtualPetsHub',
-      size: { width: 400, height: 300 }
-    },
-    {
-      id: 'relocate',
-      icon: '✈️',
-      label: 'Global Jobs',
-      component: 'RelocateMeIntegration',
-      size: { width: 550, height: 450 }
-    },
-    {
-      id: 'downloads',
-      icon: '📥',
-      label: 'Downloads',
-      component: 'ProfessionalDownloadManager',
-      size: { width: 600, height: 500 }
-    },
-    {
-      id: 'weather',
-      icon: '☁️',
-      label: 'Weather',
-      component: 'ProfessionalWeatherWidget',
-      size: { width: 500, height: 450 }
-    },
-    {
-      id: 'vault',
-      icon: '📁',
-      label: 'File Vault',
-      component: 'VaultApp',
-      size: { width: 450, height: 350 }
-    },
-    {
-      id: 'text-editor',
-      icon: '✏️',
-      label: 'Text Editor',
-      component: 'NotepadApp',
-      size: { width: 500, height: 400 }
-    },
-    {
-      id: 'terminal',
-      icon: '⌨️',
-      label: 'Terminal',
-      component: 'QuantumTerminal',
-      size: { width: 400, height: 300 }
-    },
-    {
-      id: 'settings',
-      icon: '⚙️',
-      label: 'Settings',
-      component: 'ProfessionalSettings',
-      size: { width: 600, height: 500 }
+      size: { width: 420, height: 315 }
     },
     {
       id: 'calculator',
       icon: '🧮',
       label: 'Calculator',
       component: 'CalculatorApp',
-      size: { width: 320, height: 500 }
+      size: { width: 210, height: 280 }
     },
     {
       id: 'system-status',
       icon: '📊',
       label: 'System Status',
       component: 'SystemStatusApp',
-      size: { width: 600, height: 450 }
+      size: { width: 350, height: 245 }
     },
     {
-      id: 'cms',
-      icon: '📝',
-      label: 'Content Manager',
-      component: 'CompactCMS',
-      size: { width: 500, height: 400 }
+      id: 'uk-wonders',
+      icon: '🏔️',
+      label: 'UK Wonders',
+      component: 'UKNaturalWondersViewer',
+      size: { width: 420, height: 315 }
+    },
+    {
+      id: 'virtual-pets',
+      icon: '🐾',
+      label: 'Virtual Pets',
+      component: 'VirtualPetsHub',
+      size: { width: 245, height: 175 }
+    },
+    {
+      id: 'useful-links',
+      icon: '🔗',
+      label: 'Useful Links',
+      component: 'UsefulLinks',
+      size: { width: 350, height: 280 }
     }
   ];
 
