@@ -155,7 +155,7 @@ const ThriveRemoteDesktop = () => {
       'CalculatorApp': <CalculatorApp />,
       'SystemStatusApp': <SystemStatusApp />,
       'CompactCMS': <CompactCMS />,
-      // Entertainment components
+      // Entertainment components removed media player as per user request
       'VirtualPetsHub': (
         <div style={{padding: '20px', background: 'linear-gradient(135deg, #f8f9fa, #e9ecef)', color: '#495057'}}>
           <h3 style={{fontFamily: 'system-ui', marginBottom: '15px', color: '#495057'}}>🐾 Virtual Companions</h3>
