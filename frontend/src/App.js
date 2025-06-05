@@ -79,7 +79,7 @@ const ThriveRemoteDesktop = () => {
     return () => clearInterval(timeInterval);
   }, []);
 
-  const createWindow = (id, title, content, icon = "🖥️", size = { width: 300, height: 200 }) => {
+  const createWindow = (id, title, content, icon = "🖥️", size = { width: 210, height: 140 }) => {
     sounds.playWindowOpen();
     const newWindow = {
       id,
