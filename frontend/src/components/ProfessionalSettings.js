@@ -333,7 +333,7 @@ const ProfessionalSettings = () => {
 
       {/* Settings Content */}
       <div className="card">
-        <div className="card-content p-6">
+        <div className="card-content p-3">
           
           {/* Appearance Tab */}
           {activeTab === 'appearance' && (
