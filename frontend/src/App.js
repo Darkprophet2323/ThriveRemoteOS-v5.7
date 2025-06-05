@@ -515,6 +515,12 @@ const ThriveRemoteDesktop = () => {
                   <span className="menu-icon">🔗</span>Useful Links
                 </div>
                 <div className="menu-item fadeInUp animate-delay-300" onClick={() => { 
+                  handleIconClick('UK Natural Wonders', '🏔️', 'UKNaturalWondersViewer', 420, 315); 
+                  setShowStartMenu(false); 
+                }}>
+                  <span className="menu-icon">🏔️</span>UK Natural Wonders
+                </div>
+                <div className="menu-item fadeInUp animate-delay-400" onClick={() => { 
                   handleIconClick('Content Manager', '📝', 'CompactCMS', 300, 245); 
                   setShowStartMenu(false); 
                 }}>
