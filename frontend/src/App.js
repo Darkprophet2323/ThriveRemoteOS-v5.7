@@ -246,14 +246,17 @@ const ThriveRemoteDesktop = () => {
       content,
       icon,
       size: finalSize,
-      // Center windows on screen (or fullscreen on mobile)
-      position: isMobile ? { x: 0, y: 24 } : {
+      // Mobile-optimized positioning - ensure windows are visible
+      position: isMobile ? { 
+        x: 0, 
+        y: 28 // Account for news ticker
+      } : {
         x: Math.max(0, (window.innerWidth - finalSize.width) / 2),
         y: Math.max(0, (window.innerHeight - finalSize.height) / 2)
       },
       zIndex: getNextZIndex(),
       isMinimized: false,
-      isMaximized: isMobile // Auto-maximize on mobile
+      isMaximized: isMobile // Auto-maximize on mobile for full visibility
     };
 
     setWindows([...windows, newWindow]);
