@@ -198,17 +198,8 @@ const ThriveRemoteDesktop = () => {
     setWindows([...windows, newWindow]);
   };
 
-  if (loading) {
-    return (
-      <div className="boot-screen">
-        <div className="boot-logo">🤖</div>
-        <div className="boot-text">ThriveRemoteOS V5.5</div>
-        <div className="boot-subtitle">Initializing AI Job Entertainment Platform...</div>
-        <div className="boot-progress">
-          <div className="boot-progress-bar"></div>
-        </div>
-      </div>
-    );
+  if (!bootComplete) {
+    return <CompactSleekLoader onComplete={handleLoadingComplete} />;
   }
 
   return (
