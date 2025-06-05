@@ -338,7 +338,7 @@ const ProfessionalSettings = () => {
           {/* Appearance Tab */}
           {activeTab === 'appearance' && (
             <div>
-              <h3 className="text-lg font-semibold mb-4">Appearance Settings</h3>
+              <h3 className="text-sm font-semibold mb-3">Appearance Settings</h3>
               
               <SettingRow 
                 label="Theme" 
