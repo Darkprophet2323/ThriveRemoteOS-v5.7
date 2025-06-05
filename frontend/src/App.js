@@ -362,19 +362,19 @@ const ThriveRemoteDesktop = () => {
               <div className="start-menu-section">
                 <div className="section-title">🎵 Entertainment</div>
                 <div className="menu-item" onClick={() => { 
-                  handleIconClick('Virtual Pets Hub', '🐾', 'VirtualPetsHub', 280, 210); 
+                  handleIconClick('Virtual Pets Hub', '🐾', 'VirtualPetsHub', 245, 175); 
                   setShowStartMenu(false); 
                 }}>
                   <span className="menu-icon">🐾</span>Virtual Pets Hub
                 </div>
                 <div className="menu-item" onClick={() => { 
-                  handleIconClick('Text Atelier', 'edit_note', <NotepadApp />, 280, 210); 
+                  handleIconClick('Text Atelier', 'edit_note', <NotepadApp />, 245, 175); 
                   setShowStartMenu(false); 
                 }}>
                   <span className="menu-icon">📝</span>Text Atelier
                 </div>
                 <div className="menu-item" onClick={() => { 
-                  handleIconClick('File Vault', 'folder_open', <VaultApp />, 280, 210); 
+                  handleIconClick('File Vault', 'folder_open', <VaultApp />, 245, 175); 
                   setShowStartMenu(false); 
                 }}>
                   <span className="menu-icon">📁</span>File Vault
