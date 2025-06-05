@@ -73,47 +73,20 @@ const CalculatorApp = () => {
   };
 
   return (
-    <div style={{
-      padding: '20px',
-      background: 'linear-gradient(135deg, #2C3E50, #34495E)',
-      color: '#fff',
-      fontFamily: 'monospace',
-      height: '100%',
-      overflow: 'hidden'
-    }}>
-      <h3 style={{ color: '#D4AF37', marginBottom: '20px', textAlign: 'center' }}>
-        🧮 ThriveOS Calculator
-      </h3>
+    <div className="calculator-container">
+      <div className="calculator-header">
+        <h3>🧮 Calculator</h3>
+      </div>
       
       {/* Display */}
-      <div style={{
-        background: '#1a1a1a',
-        padding: '15px',
-        borderRadius: '8px',
-        marginBottom: '15px',
-        border: '2px solid #D4AF37'
-      }}>
-        <div style={{
-          fontSize: '2rem',
-          textAlign: 'right',
-          fontWeight: 'bold',
-          color: '#D4AF37',
-          minHeight: '40px',
-          display: 'flex',
-          alignItems: 'center',
-          justifyContent: 'flex-end'
-        }}>
+      <div className="calculator-display">
+        <div className="display-value">
           {display}
         </div>
       </div>
 
       {/* Button Grid */}
-      <div style={{
-        display: 'grid',
-        gridTemplateColumns: 'repeat(4, 1fr)',
-        gap: '8px',
-        maxWidth: '280px'
-      }}>
+      <div className="calculator-grid">
         {/* Row 1 */}
         <Button onClick={clear} className="operator">C</Button>
         <Button onClick={clearEntry} className="operator">CE</Button>
@@ -140,7 +113,7 @@ const CalculatorApp = () => {
 
         {/* Row 5 */}
         <Button onClick={() => inputNumber(0)} style={{ gridColumn: 'span 2' }}>0</Button>
-        <Button onClick={() => setDisplay(display + '.')}>.</Button>
+        <Button onClick={() => setDisplay(display.includes('.') ? display : display + '.')}>.</Button>
       </div>
     </div>
   );
@@ -149,34 +122,8 @@ const CalculatorApp = () => {
 const Button = ({ onClick, children, className, style }) => (
   <button
     onClick={onClick}
-    style={{
-      padding: '15px',
-      border: 'none',
-      borderRadius: '8px',
-      fontSize: '1.2rem',
-      fontWeight: 'bold',
-      cursor: 'pointer',
-      transition: 'all 0.2s ease',
-      background: className === 'operator' ? '#D4AF37' : 
-                 className === 'equals' ? '#27AE60' : '#34495E',
-      color: className === 'operator' || className === 'equals' ? '#000' : '#fff',
-      border: '2px solid transparent',
-      ...style
-    }}
-    onMouseEnter={(e) => {
-      e.target.style.transform = 'scale(1.05)';
-      e.target.style.borderColor = '#D4AF37';
-    }}
-    onMouseLeave={(e) => {
-      e.target.style.transform = 'scale(1)';
-      e.target.style.borderColor = 'transparent';
-    }}
-    onMouseDown={(e) => {
-      e.target.style.transform = 'scale(0.95)';
-    }}
-    onMouseUp={(e) => {
-      e.target.style.transform = 'scale(1.05)';
-    }}
+    className={`calc-btn ${className || ''}`}
+    style={style}
   >
     {children}
   </button>
