@@ -402,6 +402,7 @@ def run_tests():
     suite.addTest(ThriveRemoteOSAPITester('test_music_trending'))
     suite.addTest(ThriveRemoteOSAPITester('test_music_search'))
     suite.addTest(ThriveRemoteOSAPITester('test_virtual_pets'))
+    suite.addTest(ThriveRemoteOSAPITester('test_user_settings'))
     
     # Create a test runner
     runner = unittest.TextTestRunner(verbosity=2)
