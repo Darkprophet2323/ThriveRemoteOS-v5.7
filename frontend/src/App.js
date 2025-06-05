@@ -138,7 +138,7 @@ const ThriveRemoteDesktop = () => {
   };
 
   // Enhanced desktop icon click handler with animations
-  const handleIconClick = (title, icon, componentName, width = 400, height = 300) => {
+  const handleIconClick = (title, icon, componentName, width = 280, height = 210) => {
     sounds.playClick();
     
     // Component mapping with all working applications
