@@ -707,8 +707,9 @@ const Window = ({ window, onClose, onMinimize, onMaximize, onBringToFront, onMov
     >
       <div 
         className="window-header" 
-        onMouseDown={handleMouseDown}
-        onDoubleClick={handleDoubleClick}
+        onMouseDown={isMobile ? undefined : handleMouseDown}
+        onDoubleClick={isMobile ? undefined : handleDoubleClick}
+        style={{ cursor: isMobile ? 'default' : 'move' }}
       >
         <div className="window-title">
           <span className="window-icon">{window.icon}</span>
