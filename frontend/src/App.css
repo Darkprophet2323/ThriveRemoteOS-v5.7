@@ -1190,6 +1190,7 @@ body {
 .desktop-environment.mobile-mode::after {
   display: none; /* Hide decorative elements on mobile */
 }
+/* ===== MOBILE RESPONSIVE DESIGN ===== */
 @media (max-width: 768px) {
   .desktop-environment {
     touch-action: manipulation;
