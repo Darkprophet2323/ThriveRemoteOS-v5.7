@@ -464,7 +464,25 @@ body {
   margin-bottom: 8px;
 }
 
-/* ===== TASKBAR ===== */
+.window-resize-handle {
+  position: absolute;
+  bottom: 0;
+  right: 0;
+  width: 12px;
+  height: 12px;
+  cursor: se-resize;
+  background: linear-gradient(-45deg, 
+    transparent 40%, 
+    var(--border-medium) 50%, 
+    transparent 60%);
+  border-radius: 0 0 8px 0;
+  opacity: 0.5;
+  transition: opacity var(--transition-fast);
+}
+
+.window-resize-handle:hover {
+  opacity: 1;
+}
 .taskbar {
   position: fixed;
   bottom: 0;
