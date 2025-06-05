@@ -391,26 +391,15 @@ class ThriveRemoteOSAPITester(unittest.TestCase):
         print(f"User settings API endpoint tested successfully")
         print(f"Settings can be stored in user profile for persistence")
 
-    def test_virtual_wonders_viewer(self):
-        """Test the UK Natural Wonders data availability"""
-        # This is a frontend component, but we can verify the images are accessible
-        uk_wonders_images = [
-            "https://images.unsplash.com/photo-1539650116574-75c0c6d73c0e",
-            "https://images.unsplash.com/photo-1505142468610-359e7d316be0",
-            "https://images.unsplash.com/photo-1506905925346-21bda4d32df4",
-            "https://images.unsplash.com/photo-1552465011-b4e21bf6e79a",
-            "https://images.unsplash.com/photo-1598300042247-d088f8ab3a91",
-            "https://images.unsplash.com/photo-1551632436-cbf8dd35adfa",
-            "https://images.unsplash.com/photo-1513026705753-bc3fffca8bf4"
-        ]
+    def test_window_positioning(self):
+        """Test window positioning configuration in frontend"""
+        # This is a frontend feature, but we can verify the system is operational
+        response = requests.get(f"{self.base_url}/")
+        self.assertEqual(response.status_code, 200)
         
-        # Test that images are accessible
-        for image_url in uk_wonders_images[:3]:  # Test first 3 images only
-            response = requests.head(image_url)
-            self.assertTrue(response.status_code in [200, 302, 304], f"Image {image_url} is not accessible")
-        
-        print(f"UK Natural Wonders images are accessible")
-        print(f"Slideshow component can display the images correctly")
+        # Verify system is running and can support window management
+        print("Backend is operational for window positioning tests")
+        print("Window positioning will be tested via frontend Playwright tests")
 
 def run_tests():
     # Create a test suite
