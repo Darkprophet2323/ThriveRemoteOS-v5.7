@@ -384,7 +384,7 @@ const ThriveRemoteDesktop = () => {
               <div className="start-menu-section">
                 <div className="section-title">🔧 System</div>
                 <div className="menu-item" onClick={() => { 
-                  handleIconClick('System Settings', 'settings', <ProfessionalSettings />, 420, 350); 
+                  handleIconClick('System Settings', 'settings', <ProfessionalSettings />, 350, 280); 
                   setShowStartMenu(false); 
                 }}>
                   <span className="menu-icon">⚙️</span>System Settings
