@@ -1248,22 +1248,33 @@ body {
   /* Mobile Window System */
   .window {
     position: fixed !important;
-    top: 24px !important;
+    top: 28px !important; /* Account for news ticker */
     left: 0 !important;
     width: 100vw !important;
-    height: calc(100vh - 74px) !important;
+    height: calc(100vh - 78px) !important; /* News ticker + taskbar */
     border-radius: 0 !important;
     max-width: none !important;
     max-height: none !important;
     min-width: auto !important;
     min-height: auto !important;
     z-index: 200 !important;
+    transform: none !important; /* Prevent any transforms that could move window off-screen */
   }
 
   .window-header {
     padding: 6px 12px;
     min-height: 36px;
     touch-action: none;
+    position: relative;
+  }
+
+  /* Disable window dragging on mobile */
+  .window-header {
+    cursor: default !important;
+    -webkit-user-select: none;
+    -moz-user-select: none;
+    -ms-user-select: none;
+    user-select: none;
   }
 
   .window-title {
