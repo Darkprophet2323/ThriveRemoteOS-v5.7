@@ -409,7 +409,7 @@ const ProfessionalSettings = () => {
           {/* System Tab */}
           {activeTab === 'system' && (
             <div>
-              <h3 className="text-lg font-semibold mb-4">System Settings</h3>
+              <h3 className="text-sm font-semibold mb-3">System Settings</h3>
               
               <SettingRow 
                 label="Sound Effects" 
