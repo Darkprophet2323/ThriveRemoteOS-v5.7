@@ -339,6 +339,7 @@ const ThriveRemoteDesktop = () => {
       'SystemStatusApp': <SystemStatusApp />,
       'CompactCMS': <CompactCMS />,
       'UsefulLinks': <UsefulLinks />,
+      'UKNaturalWondersViewer': <UKNaturalWondersViewer />,
       // Entertainment components removed media player as per user request
       'VirtualPetsHub': (
         <div className="virtual-pets-container">
