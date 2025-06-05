@@ -7,7 +7,7 @@ from datetime import datetime
 class ThriveRemoteOSAPITester(unittest.TestCase):
     def __init__(self, *args, **kwargs):
         super(ThriveRemoteOSAPITester, self).__init__(*args, **kwargs)
-        self.base_url = "https://b05a945f-4f7a-41f6-a1d7-85051a9a9cc8.preview.emergentagent.com/api"
+        self.base_url = "http://localhost:8001/api"
         self.tests_run = 0
         self.tests_passed = 0
 
