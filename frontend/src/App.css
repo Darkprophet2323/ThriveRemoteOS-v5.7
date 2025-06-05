@@ -1320,6 +1320,109 @@ body {
   margin: 0;
 }
 
+/* ===== CALCULATOR COMPONENT STYLES ===== */
+.calculator-container {
+  padding: 12px;
+  background: var(--pure-white);
+  height: 100%;
+  display: flex;
+  flex-direction: column;
+  font-family: var(--font-mono);
+}
+
+.calculator-header {
+  text-align: center;
+  margin-bottom: 10px;
+}
+
+.calculator-header h3 {
+  font-size: 0.9rem;
+  font-weight: 600;
+  color: var(--text-primary);
+  margin: 0;
+}
+
+.calculator-display {
+  background: var(--grey-50);
+  border: 1px solid var(--border-medium);
+  border-radius: 4px;
+  padding: 8px;
+  margin-bottom: 10px;
+  min-height: 32px;
+}
+
+.display-value {
+  font-size: 1.2rem;
+  text-align: right;
+  font-weight: 600;
+  color: var(--text-primary);
+  font-family: var(--font-mono);
+  display: flex;
+  align-items: center;
+  justify-content: flex-end;
+  min-height: 24px;
+  word-wrap: break-word;
+  overflow-wrap: break-word;
+}
+
+.calculator-grid {
+  display: grid;
+  grid-template-columns: repeat(4, 1fr);
+  gap: 4px;
+  flex: 1;
+}
+
+.calc-btn {
+  background: var(--pure-white);
+  border: 1px solid var(--border-medium);
+  color: var(--text-primary);
+  padding: 8px 4px;
+  border-radius: 4px;
+  cursor: pointer;
+  font-size: 0.8rem;
+  font-weight: 500;
+  transition: all var(--transition-fast);
+  min-height: 28px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  font-family: var(--font-mono);
+}
+
+.calc-btn:hover {
+  background: var(--grey-50);
+  border-color: var(--border-dark);
+  transform: translateY(-1px);
+  box-shadow: var(--shadow-subtle);
+}
+
+.calc-btn:active {
+  transform: translateY(0);
+  box-shadow: none;
+}
+
+.calc-btn.operator {
+  background: var(--grey-200);
+  color: var(--text-primary);
+  font-weight: 600;
+}
+
+.calc-btn.operator:hover {
+  background: var(--hover-blue);
+  color: var(--pure-white);
+}
+
+.calc-btn.equals {
+  background: var(--grey-800);
+  color: var(--pure-white);
+  font-weight: 600;
+}
+
+.calc-btn.equals:hover {
+  background: var(--hover-green);
+  color: var(--pure-white);
+}
+
 /* ===== ENHANCED RIGHT-CLICK CONTEXT MENU ===== */
 .context-menu {
   position: fixed;
