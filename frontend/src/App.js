@@ -155,18 +155,19 @@ const ThriveRemoteDesktop = () => {
       'CalculatorApp': <CalculatorApp />,
       'SystemStatusApp': <SystemStatusApp />,
       'CompactCMS': <CompactCMS />,
+      'UsefulLinks': <UsefulLinks />,
       // Entertainment components removed media player as per user request
       'VirtualPetsHub': (
-        <div style={{padding: '20px', background: 'linear-gradient(135deg, #f8f9fa, #e9ecef)', color: '#495057'}}>
-          <h3 style={{fontFamily: 'system-ui', marginBottom: '15px', color: '#495057'}}>🐾 Virtual Companions</h3>
-          <p style={{opacity: 0.8, fontSize: '0.9rem'}}>AI-powered desktop pets for entertainment while working</p>
-          <div style={{marginTop: '15px', display: 'flex', gap: '10px', flexWrap: 'wrap'}}>
-            <button className="sleek-btn" onClick={() => window.open('/virtual-pets-tool/', '_blank')}>
+        <div className="virtual-pets-container">
+          <h3>🐾 Virtual Companions</h3>
+          <p>AI-powered desktop pets for entertainment while working</p>
+          <div className="pets-buttons">
+            <a href="/virtual-pets-tool/" target="_blank" rel="noopener noreferrer" className="pet-btn">
               🥚 Cosmic Pets Game
-            </button>
-            <button className="sleek-btn" onClick={() => window.open('/virtual-desktop-pets/', '_blank')}>
+            </a>
+            <a href="/virtual-desktop-pets/" target="_blank" rel="noopener noreferrer" className="pet-btn">
               🐾 Desktop Pets
-            </button>
+            </a>
           </div>
         </div>
       )
