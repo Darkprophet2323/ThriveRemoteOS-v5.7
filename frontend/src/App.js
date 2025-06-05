@@ -139,6 +139,47 @@ const ThriveRemoteDesktop = () => {
     }
   }, []);
 
+  // Handle URL parameters for mobile app shortcuts
+  useEffect(() => {
+    const urlParams = new URLSearchParams(window.location.search);
+    const app = urlParams.get('app');
+    
+    if (app && bootComplete) {
+      // Auto-open specific apps from PWA shortcuts
+      setTimeout(() => {
+        switch (app) {
+          case 'jobs':
+            handleIconClick('AI Job Links Portal', '🤖', 'AIJobLinksPortal', 420, 315);
+            break;
+          case 'calculator':
+            handleIconClick('Calculator', '🧮', 'CalculatorApp', 210, 280);
+            break;
+          case 'pets':
+            handleIconClick('Virtual Pets Hub', '🐾', 'VirtualPetsHub', 245, 175);
+            break;
+          case 'links':
+            handleIconClick('Useful Links', '🔗', 'UsefulLinks', 350, 280);
+            break;
+          case 'settings':
+            handleIconClick('System Settings', '⚙️', 'ProfessionalSettings', 350, 280);
+            break;
+          default:
+            break;
+        }
+      }, 500);
+    }
+  }, [bootComplete]);
+
+  // Enhanced mobile window controls
+  const handleMobileClose = (windowId) => {
+    if (isMobile) {
+      // On mobile, closing a window goes back to desktop
+      closeWindow(windowId);
+      // Clear URL parameters
+      window.history.replaceState({}, document.title, window.location.pathname);
+    }
+  };
+
   // Time update effect
 
   // Mobile-specific window sizing
