@@ -41,7 +41,38 @@ const ThriveRemoteDesktop = () => {
   const [loading, setLoading] = useState(true);
   const [bootComplete, setBootComplete] = useState(false);
   const [rightClickMenu, setRightClickMenu] = useState({ show: false, x: 0, y: 0 });
+  const [isMobile, setIsMobile] = useState(false);
   const sounds = useSounds();
+
+  // Detect mobile device
+  useEffect(() => {
+    const checkMobile = () => {
+      const mobile = window.innerWidth <= 768 || 
+                   /Android|webOS|iPhone|iPad|iPod|BlackBerry|IEMobile|Opera Mini/i.test(navigator.userAgent);
+      setIsMobile(mobile);
+    };
+
+    checkMobile();
+    window.addEventListener('resize', checkMobile);
+    window.addEventListener('orientationchange', () => {
+      setTimeout(checkMobile, 100);
+    });
+
+    return () => {
+      window.removeEventListener('resize', checkMobile);
+      window.removeEventListener('orientationchange', checkMobile);
+    };
+  }, []);
+
+  // Mobile-specific window sizing
+  const getMobileWindowSize = (defaultWidth, defaultHeight) => {
+    if (!isMobile) return { width: defaultWidth, height: defaultHeight };
+    
+    return {
+      width: window.innerWidth,
+      height: window.innerHeight - 74 // Account for mobile taskbar and status
+    };
+  };
 
   const handleLoadingComplete = () => {
     setBootComplete(true);
