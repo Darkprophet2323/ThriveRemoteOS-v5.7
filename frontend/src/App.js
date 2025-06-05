@@ -321,13 +321,13 @@ const ThriveRemoteDesktop = () => {
               <div className="start-menu-section">
                 <div className="section-title">🤖 AI Job Entertainment</div>
                 <div className="menu-item fadeInUp" onClick={() => { 
-                  handleIconClick('AI Job Links Portal', '🤖', 'AIJobLinksPortal', 800, 600); 
+                  handleIconClick('AI Job Links Portal', '🤖', 'AIJobLinksPortal', 560, 420); 
                   setShowStartMenu(false); 
                 }}>
                   <span className="menu-icon">🤖</span>AI Job Links Portal
                 </div>
                 <div className="menu-item fadeInUp animate-delay-100" onClick={() => { 
-                  handleIconClick('AI Career Portal', '🎭', 'WaitressJobPortal', 450, 325); 
+                  handleIconClick('AI Career Portal', '🎭', 'WaitressJobPortal', 315, 228); 
                   setShowStartMenu(false); 
                 }}>
                   <span className="menu-icon">🎭</span>AI Career Portal
