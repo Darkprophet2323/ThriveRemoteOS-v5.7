@@ -601,7 +601,7 @@ const ProfessionalSettings = () => {
           {/* Advanced Tab */}
           {activeTab === 'advanced' && (
             <div>
-              <h3 className="text-lg font-semibold mb-4">Advanced Settings</h3>
+              <h3 className="text-sm font-semibold mb-3">Advanced Settings</h3>
               
               <SettingRow 
                 label="Weather Location" 
