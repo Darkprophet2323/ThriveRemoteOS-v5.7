@@ -1,0 +1,288 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>🥚 Cosmic Pets - Virtual Pet Game</title>
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+        
+        body {
+            font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', system-ui, sans-serif;
+            background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
+            min-height: 100vh;
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            justify-content: center;
+            color: white;
+        }
+        
+        .game-container {
+            background: rgba(255, 255, 255, 0.1);
+            backdrop-filter: blur(10px);
+            border-radius: 20px;
+            padding: 30px;
+            max-width: 600px;
+            width: 90%;
+            text-align: center;
+            box-shadow: 0 8px 32px rgba(0, 0, 0, 0.3);
+        }
+        
+        h1 {
+            font-size: 2.5rem;
+            margin-bottom: 20px;
+            background: linear-gradient(45deg, #ffd700, #ffb347);
+            -webkit-background-clip: text;
+            -webkit-text-fill-color: transparent;
+            background-clip: text;
+        }
+        
+        .pet-display {
+            background: rgba(255, 255, 255, 0.2);
+            border-radius: 15px;
+            padding: 40px;
+            margin: 30px 0;
+            min-height: 200px;
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            justify-content: center;
+        }
+        
+        .pet-emoji {
+            font-size: 4rem;
+            margin-bottom: 15px;
+            cursor: pointer;
+            transition: transform 0.3s ease;
+        }
+        
+        .pet-emoji:hover {
+            transform: scale(1.1);
+        }
+        
+        .pet-stats {
+            display: grid;
+            grid-template-columns: repeat(3, 1fr);
+            gap: 15px;
+            margin: 20px 0;
+        }
+        
+        .stat {
+            background: rgba(255, 255, 255, 0.2);
+            padding: 10px;
+            border-radius: 10px;
+        }
+        
+        .stat-label {
+            font-size: 0.8rem;
+            opacity: 0.8;
+            margin-bottom: 5px;
+        }
+        
+        .stat-value {
+            font-size: 1.2rem;
+            font-weight: bold;
+        }
+        
+        .actions {
+            display: flex;
+            gap: 15px;
+            justify-content: center;
+            flex-wrap: wrap;
+        }
+        
+        .action-btn {
+            background: linear-gradient(45deg, #667eea, #764ba2);
+            border: none;
+            color: white;
+            padding: 12px 20px;
+            border-radius: 25px;
+            cursor: pointer;
+            font-size: 1rem;
+            transition: all 0.3s ease;
+            box-shadow: 0 4px 15px rgba(0, 0, 0, 0.2);
+        }
+        
+        .action-btn:hover {
+            transform: translateY(-2px);
+            box-shadow: 0 6px 20px rgba(0, 0, 0, 0.3);
+        }
+        
+        .message {
+            margin-top: 20px;
+            padding: 15px;
+            background: rgba(255, 255, 255, 0.2);
+            border-radius: 10px;
+            font-style: italic;
+        }
+        
+        .back-btn {
+            position: fixed;
+            top: 20px;
+            left: 20px;
+            background: rgba(255, 255, 255, 0.2);
+            border: none;
+            color: white;
+            padding: 10px 15px;
+            border-radius: 10px;
+            cursor: pointer;
+            text-decoration: none;
+            font-size: 0.9rem;
+            transition: all 0.3s ease;
+        }
+        
+        .back-btn:hover {
+            background: rgba(255, 255, 255, 0.3);
+        }
+    </style>
+</head>
+<body>
+    <a href="javascript:history.back()" class="back-btn">← Back to ThriveOS</a>
+    
+    <div class="game-container">
+        <h1>🥚 Cosmic Pets</h1>
+        <p>Hatch and care for your cosmic companion!</p>
+        
+        <div class="pet-display">
+            <div class="pet-emoji" id="petDisplay">🥚</div>
+            <div id="petName">Mystery Egg</div>
+        </div>
+        
+        <div class="pet-stats">
+            <div class="stat">
+                <div class="stat-label">Happiness</div>
+                <div class="stat-value" id="happiness">50</div>
+            </div>
+            <div class="stat">
+                <div class="stat-label">Energy</div>
+                <div class="stat-value" id="energy">50</div>
+            </div>
+            <div class="stat">
+                <div class="stat-label">Level</div>
+                <div class="stat-value" id="level">1</div>
+            </div>
+        </div>
+        
+        <div class="actions">
+            <button class="action-btn" onclick="feedPet()">🍎 Feed</button>
+            <button class="action-btn" onclick="playWithPet()">🎾 Play</button>
+            <button class="action-btn" onclick="restPet()">😴 Rest</button>
+            <button class="action-btn" onclick="hatchEgg()">✨ Hatch</button>
+        </div>
+        
+        <div class="message" id="message">
+            Your cosmic egg is waiting to be hatched! Take care of it and watch it grow.
+        </div>
+    </div>
+
+    <script>
+        let pet = {
+            type: 'egg',
+            name: 'Mystery Egg',
+            happiness: 50,
+            energy: 50,
+            level: 1,
+            emoji: '🥚'
+        };
+
+        const cosmicPets = [
+            { name: 'Stardust Dragon', emoji: '🐉', type: 'dragon' },
+            { name: 'Lunar Cat', emoji: '🐱', type: 'cat' },
+            { name: 'Solar Phoenix', emoji: '🦅', type: 'bird' },
+            { name: 'Nebula Bunny', emoji: '🐰', type: 'bunny' },
+            { name: 'Galaxy Wolf', emoji: '🐺', type: 'wolf' }
+        ];
+
+        function updateDisplay() {
+            document.getElementById('petDisplay').textContent = pet.emoji;
+            document.getElementById('petName').textContent = pet.name;
+            document.getElementById('happiness').textContent = pet.happiness;
+            document.getElementById('energy').textContent = pet.energy;
+            document.getElementById('level').textContent = pet.level;
+        }
+
+        function showMessage(text) {
+            document.getElementById('message').textContent = text;
+        }
+
+        function feedPet() {
+            if (pet.type === 'egg') {
+                showMessage("The egg glows warmly when fed cosmic energy! 🌟");
+                pet.happiness = Math.min(100, pet.happiness + 10);
+            } else {
+                showMessage(`${pet.name} enjoys the cosmic food! Happiness increased! 😊`);
+                pet.happiness = Math.min(100, pet.happiness + 15);
+                pet.energy = Math.min(100, pet.energy + 5);
+            }
+            checkLevelUp();
+            updateDisplay();
+        }
+
+        function playWithPet() {
+            if (pet.type === 'egg') {
+                showMessage("You gently rock the egg. It seems to like it! 🥚");
+                pet.happiness = Math.min(100, pet.happiness + 5);
+                pet.energy = Math.max(0, pet.energy - 5);
+            } else {
+                showMessage(`${pet.name} loves playing! Energy decreased but happiness soared! 🎾`);
+                pet.happiness = Math.min(100, pet.happiness + 20);
+                pet.energy = Math.max(0, pet.energy - 15);
+            }
+            checkLevelUp();
+            updateDisplay();
+        }
+
+        function restPet() {
+            if (pet.type === 'egg') {
+                showMessage("The egg rests peacefully in the cosmic void... 😴");
+                pet.energy = Math.min(100, pet.energy + 15);
+            } else {
+                showMessage(`${pet.name} takes a peaceful nap among the stars! 😴`);
+                pet.energy = Math.min(100, pet.energy + 25);
+                pet.happiness = Math.min(100, pet.happiness + 5);
+            }
+            updateDisplay();
+        }
+
+        function hatchEgg() {
+            if (pet.type === 'egg') {
+                if (pet.happiness >= 70 && pet.energy >= 60) {
+                    const newPet = cosmicPets[Math.floor(Math.random() * cosmicPets.length)];
+                    pet.type = newPet.type;
+                    pet.name = newPet.name;
+                    pet.emoji = newPet.emoji;
+                    pet.level = 1;
+                    showMessage(`🎉 Congratulations! Your egg hatched into ${pet.name}! Welcome to the cosmos! ✨`);
+                } else {
+                    showMessage("The egg needs more love and energy before it can hatch! Keep caring for it! 💝");
+                }
+            } else {
+                showMessage(`${pet.name} is already hatched and ready for cosmic adventures! 🚀`);
+            }
+            updateDisplay();
+        }
+
+        function checkLevelUp() {
+            if (pet.happiness >= 80 && pet.energy >= 70 && pet.level < 10) {
+                pet.level++;
+                showMessage(`🎉 Level up! ${pet.name} is now level ${pet.level}! 🌟`);
+            }
+        }
+
+        // Initialize display
+        updateDisplay();
+
+        // Auto-decrease stats over time
+        setInterval(() => {
+            if (pet.happiness > 0) pet.happiness = Math.max(0, pet.happiness - 1);
+            if (pet.energy > 0) pet.energy = Math.max(0, pet.energy - 1);
+            updateDisplay();
+        }, 30000); // Every 30 seconds
+    </script>
+</body>
+</html>
