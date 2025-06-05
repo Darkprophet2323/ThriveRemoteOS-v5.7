@@ -4,26 +4,59 @@ const UsefulLinks = () => {
   const [searchTerm, setSearchTerm] = useState('');
   
   const aiRemoteJobLinks = [
-    // AI-Powered Job Platforms
+    // 🤖 AI-Powered Job Search Platforms (Curated for Arizona Waitress -> UK/Europe/Ireland)
+    { name: "HiringCafe", url: "https://hiring.cafe", category: "AI Job Search", description: "AI-driven job search engine indexing vacancies from employer career pages" },
+    { name: "Adzuna UK", url: "https://www.adzuna.co.uk", category: "AI Job Search", description: "UK job search engine with AI-powered 'Prepper' interview tool" },
+    { name: "Job Today", url: "https://jobtoday.com", category: "AI Job Search", description: "Mobile employment app for US, UK, and Spain with quick hiring in hospitality" },
+    { name: "WhatJobs", url: "https://www.whatjobs.com", category: "AI Job Search", description: "International job platform operating in 39 countries" },
+    { name: "Remocate", url: "https://www.remocate.app", category: "AI Job Search", description: "Remote jobs for digital nomads with relocation support" },
+    
+    // 🧰 AI Resume & Interview Tools (Arizona -> Europe Focus)
+    { name: "Career.io", url: "https://career.io", category: "AI Resume Tools", description: "AI-enhanced resume optimization and job application tracker" },
+    { name: "Torre.ai", url: "https://www.torre.ai", category: "AI Resume Tools", description: "AI-driven platform for remote work matching" },
+    { name: "LazyApply", url: "https://lazyapply.com", category: "AI Automation", description: "AI job application automation for LinkedIn, Indeed, ZipRecruiter" },
+    { name: "Reel.fyi", url: "https://reel.fyi", category: "AI Automation", description: "Chrome AI copilot for LinkedIn networking and referrals" },
+    { name: "Hirebird", url: "https://hirebird.com", category: "AI Automation", description: "AI-driven compatibility matching platform" },
+    
+    // 🌍 Remote Job Boards with AI (Europe-focused)
+    { name: "FlexJobs", url: "https://www.flexjobs.com", category: "Remote Jobs AI", description: "AI-curated verified remote and flexible opportunities" },
+    { name: "We Work Remotely", url: "https://weworkremotely.com", category: "Remote Jobs AI", description: "AI-categorized remote job listings" },
+    { name: "Remote.co", url: "https://remote.co", category: "Remote Jobs AI", description: "Curated remote jobs with AI-driven search" },
+    { name: "Remote OK", url: "https://remoteok.io", category: "Remote Jobs AI", description: "AI-powered remote job aggregator" },
+    
+    // Additional AI-Powered Job Platforms
     { name: "AI Apply", url: "https://aiapply.co", category: "AI Automation", description: "Premium AI job application automation" },
-    { name: "LazyApply", url: "https://lazyapply.com", category: "AI Automation", description: "LinkedIn/Indeed automation with AI" },
     { name: "Simplify Jobs", url: "https://simplify.jobs", category: "AI Automation", description: "One-click AI applications" },
     { name: "Jobscan", url: "https://jobscan.co", category: "AI Optimization", description: "AI resume optimization & ATS scoring" },
     { name: "Resume Worded", url: "https://resumeworded.com", category: "AI Resume", description: "AI-powered resume scoring system" },
+    { name: "Teal HQ", url: "https://tealhq.com", category: "AI Tools", description: "AI career development platform" },
     
     // Remote-First Platforms with Visa Support
     { name: "RelocateMe", url: "https://relocate.me", category: "Relocation", description: "Tech relocation with visa sponsorship" },
-    { name: "Remote.co", url: "https://remote.co", category: "Remote Jobs", description: "Curated remote job opportunities" },
     { name: "AngelList Talent", url: "https://angel.co/talent", category: "Startup Jobs", description: "Tech startup jobs with relocation" },
     { name: "Startup Jobs", url: "https://startup.jobs", category: "Startup Jobs", description: "Global startup opportunities" },
     { name: "Wellfound", url: "https://wellfound.com", category: "Startup Jobs", description: "Startup jobs with visa support" },
-    
-    // International Remote Platforms
-    { name: "RemoteOK", url: "https://remoteok.io", category: "Remote Jobs", description: "Global remote job board" },
-    { name: "We Work Remotely", url: "https://weworkremotely.com", category: "Remote Jobs", description: "Largest remote job community" },
-    { name: "FlexJobs", url: "https://flexjobs.com", category: "Remote Jobs", description: "Vetted remote & flexible jobs" },
     { name: "Toptal", url: "https://toptal.com", category: "Freelance", description: "Elite freelance talent network" },
-    { name: "Upwork", url: "https://upwork.com", category: "Freelance", description: "Global freelancing platform" },
+    
+    // European Opportunities (Arizona -> Europe Focus)
+    { name: "TheLocal.com Jobs", url: "https://jobs.thelocal.com", category: "European Jobs", description: "Jobs across Europe with visa info" },
+    { name: "EurJobs", url: "https://eurjobs.com", category: "European Jobs", description: "European job opportunities" },
+    { name: "Jobs.eu", url: "https://jobs.eu", category: "European Jobs", description: "Pan-European job search" },
+    { name: "StepStone", url: "https://stepstone.com", category: "European Jobs", description: "Leading European job platform" },
+    { name: "Xing Jobs", url: "https://xing.com/jobs", category: "German Jobs", description: "German professional network jobs" },
+    
+    // UK-Specific (Arizona -> UK Focus)
+    { name: "UK Gov Jobs", url: "https://gov.uk/jobs", category: "UK Government", description: "UK government positions" },
+    { name: "Totaljobs UK", url: "https://totaljobs.com", category: "UK Jobs", description: "UK's leading job board" },
+    { name: "Reed UK", url: "https://reed.co.uk", category: "UK Jobs", description: "UK recruitment platform" },
+    { name: "Indeed UK", url: "https://indeed.co.uk", category: "UK Jobs", description: "UK job search engine" },
+    { name: "CV Library", url: "https://cv-library.co.uk", category: "UK Jobs", description: "UK job board and CV database" },
+    
+    // Ireland-Specific (Arizona -> Ireland Focus)
+    { name: "Jobs.ie", url: "https://jobs.ie", category: "Irish Jobs", description: "Ireland's largest job board" },
+    { name: "IrishJobs", url: "https://irishjobs.ie", category: "Irish Jobs", description: "Leading Irish recruitment website" },
+    { name: "Recruit Ireland", url: "https://recruitireland.com", category: "Irish Jobs", description: "Irish recruitment platform" },
+    { name: "Public Jobs Ireland", url: "https://publicjobs.ie", category: "Irish Government", description: "Irish public sector jobs" },
     
     // Tech-Specific with Visa Support
     { name: "Stack Overflow Jobs", url: "https://stackoverflow.com/jobs", category: "Tech Jobs", description: "Developer jobs with relocation" },
@@ -32,34 +65,6 @@ const UsefulLinks = () => {
     { name: "Dice", url: "https://dice.com", category: "Tech Jobs", description: "Tech professionals job board" },
     { name: "CyberSeek", url: "https://cyberseek.org", category: "Cybersecurity", description: "Cybersecurity career pathways" },
     
-    // European Opportunities
-    { name: "TheLocal.com Jobs", url: "https://jobs.thelocal.com", category: "European Jobs", description: "Jobs across Europe with visa info" },
-    { name: "EurJobs", url: "https://eurjobs.com", category: "European Jobs", description: "European job opportunities" },
-    { name: "Jobs.eu", url: "https://jobs.eu", category: "European Jobs", description: "Pan-European job search" },
-    { name: "StepStone", url: "https://stepstone.com", category: "European Jobs", description: "Leading European job platform" },
-    { name: "Xing Jobs", url: "https://xing.com/jobs", category: "German Jobs", description: "German professional network jobs" },
-    
-    // Asia-Pacific Opportunities
-    { name: "JobStreet", url: "https://jobstreet.com", category: "APAC Jobs", description: "Southeast Asia job platform" },
-    { name: "Seek", url: "https://seek.com.au", category: "Australian Jobs", description: "Australia's largest job board" },
-    { name: "JobKorea", url: "https://jobkorea.co.kr", category: "Korean Jobs", description: "South Korea job opportunities" },
-    { name: "51job", url: "https://51job.com", category: "Chinese Jobs", description: "China's leading job platform" },
-    { name: "Naukri", url: "https://naukri.com", category: "Indian Jobs", description: "India's largest job portal" },
-    
-    // AI Resume & Interview Tools
-    { name: "Teal HQ", url: "https://tealhq.com", category: "AI Tools", description: "AI career development platform" },
-    { name: "Rezi", url: "https://rezi.ai", category: "AI Resume", description: "ATS-optimized resume builder" },
-    { name: "Kickresume", url: "https://kickresume.com", category: "Resume Builder", description: "Professional resume templates" },
-    { name: "Enhancv", url: "https://enhancv.com", category: "Resume Builder", description: "Visual resume customization" },
-    { name: "Interview Warmup", url: "https://grow.google/certificates/interview-warmup", category: "Interview Prep", description: "Google's AI interview practice" },
-    
-    // Specialized Remote Platforms
-    { name: "NoDesk", url: "https://nodesk.co", category: "Remote Resources", description: "Remote work resources & jobs" },
-    { name: "Working Nomads", url: "https://workingnomads.co", category: "Digital Nomad", description: "Curated remote job list" },
-    { name: "Remotive", url: "https://remotive.io", category: "Remote Jobs", description: "Remote tech job community" },
-    { name: "JustRemote", url: "https://justremote.co", category: "Remote Jobs", description: "Remote job aggregator" },
-    { name: "Remote Leaf", url: "https://remoteleaf.com", category: "Remote Jobs", description: "Hand-picked remote jobs" },
-    
     // Government & Official Visa Resources
     { name: "Work in Estonia", url: "https://work.estonia.ee", category: "Government", description: "Official Estonia work program" },
     { name: "Make it in Germany", url: "https://make-it-in-germany.com", category: "Government", description: "Official German work portal" },
@@ -67,19 +72,12 @@ const UsefulLinks = () => {
     { name: "Work in Denmark", url: "https://workindenmark.dk", category: "Government", description: "Danish work authorization" },
     { name: "Netherlands Expat", url: "https://expatnetwork.com", category: "Government", description: "Netherlands work permits" },
     
-    // Consulting & Contract Platforms
-    { name: "Catalant", url: "https://catalant.com", category: "Consulting", description: "Expert consulting network" },
-    { name: "10EQS", url: "https://10eqs.com", category: "Consulting", description: "Strategy consulting projects" },
-    { name: "Expert360", url: "https://expert360.com", category: "Consulting", description: "Expert consulting marketplace" },
-    { name: "Clarity", url: "https://clarity.fm", category: "Consulting", description: "On-demand business advice" },
-    { name: "GLG", url: "https://glg.it", category: "Consulting", description: "Global expert insights network" },
-    
-    // Industry-Specific Platforms
-    { name: "BioSpace", url: "https://biospace.com", category: "Biotech", description: "Life sciences job platform" },
-    { name: "FinancialCareers", url: "https://efinancialcareers.com", category: "Finance", description: "Financial services jobs" },
-    { name: "HealthJobsNationwide", url: "https://healthjobsnationwide.com", category: "Healthcare", description: "Healthcare professional jobs" },
-    { name: "EdWeek Jobs", url: "https://jobs.edweek.org", category: "Education", description: "Education sector opportunities" },
-    { name: "Mediabistro", url: "https://mediabistro.com", category: "Media", description: "Media & communications jobs" },
+    // Hospitality & Service Industry (Arizona Waitress Focus)
+    { name: "Hospitality Jobs UK", url: "https://hospitalityjobs.com", category: "Hospitality", description: "UK hospitality and service roles" },
+    { name: "Caterer Jobs", url: "https://caterer.com/jobs", category: "Hospitality", description: "UK catering and hospitality jobs" },
+    { name: "Indeed Hospitality", url: "https://indeed.com/q-hospitality-jobs.html", category: "Hospitality", description: "Global hospitality job search" },
+    { name: "Hotel Jobs Europe", url: "https://hoteljobs.eu", category: "Hospitality", description: "European hotel and restaurant jobs" },
+    { name: "Restaurant Jobs", url: "https://restaurantjobs.com", category: "Hospitality", description: "Restaurant and food service careers" },
     
     // AI & Machine Learning Specific
     { name: "AI Jobs", url: "https://ai-jobs.net", category: "AI Specific", description: "Artificial intelligence careers" },
@@ -88,63 +86,7 @@ const UsefulLinks = () => {
     { name: "Data Science Central", url: "https://datasciencecentral.com/jobs", category: "Data Science", description: "Data science job board" },
     { name: "KDnuggets Jobs", url: "https://kdnuggets.com/jobs", category: "Data Analytics", description: "Analytics & data mining jobs" },
     
-    // Blockchain & Crypto
-    { name: "Crypto Jobs List", url: "https://cryptojobslist.com", category: "Blockchain", description: "Cryptocurrency & blockchain jobs" },
-    { name: "Blockchain Jobs", url: "https://blockchainjobs.co", category: "Blockchain", description: "Decentralized technology careers" },
-    { name: "AngelList Crypto", url: "https://angel.co/jobs/crypto", category: "Crypto Startups", description: "Crypto startup opportunities" },
-    { name: "Web3 Jobs", url: "https://web3.career", category: "Web3", description: "Decentralized web opportunities" },
-    { name: "DeFi Jobs", url: "https://defijobs.net", category: "DeFi", description: "Decentralized finance careers" },
-    
-    // Design & Creative
-    { name: "Dribbble Jobs", url: "https://dribbble.com/jobs", category: "Design", description: "Creative design opportunities" },
-    { name: "Behance Jobs", url: "https://behance.net/jobboard", category: "Creative", description: "Creative professional network" },
-    { name: "AIGA Design Jobs", url: "https://designjobs.aiga.org", category: "Design", description: "Professional design careers" },
-    { name: "Krop", url: "https://krop.com", category: "Creative", description: "Creative industry job board" },
-    { name: "Working Not Working", url: "https://workingnotworking.com", category: "Creative", description: "Creative freelance network" },
-    
-    // Sales & Marketing
-    { name: "SalesJobs", url: "https://salesjobs.com", category: "Sales", description: "Sales professional opportunities" },
-    { name: "MarketingHire", url: "https://marketinghire.com", category: "Marketing", description: "Digital marketing careers" },
-    { name: "Growth Hackers Jobs", url: "https://jobs.growthhackers.com", category: "Growth", description: "Growth marketing roles" },
-    { name: "HubSpot Jobs", url: "https://hubspot.com/jobs", category: "Inbound Marketing", description: "Inbound marketing opportunities" },
-    { name: "Salesforce Talent", url: "https://salesforce.com/company/careers", category: "CRM", description: "Customer relationship careers" },
-    
-    // Product Management
-    { name: "Product Manager Jobs", url: "https://productmanagerjobs.co", category: "Product", description: "Product management roles" },
-    { name: "Mind the Product Jobs", url: "https://mindtheproduct.com/jobs", category: "Product", description: "Product community jobs" },
-    { name: "ProductHired", url: "https://producthired.com", category: "Product", description: "Product management careers" },
-    { name: "Roadmunk Jobs", url: "https://roadmunk.com/jobs", category: "Product Planning", description: "Product roadmap careers" },
-    { name: "Product School Jobs", url: "https://productschool.com/jobs", category: "Product Education", description: "Product management training" },
-    
-    // Executive & Leadership
-    { name: "ExecuNet", url: "https://execunet.com", category: "Executive", description: "Executive-level opportunities" },
-    { name: "BoardProspects", url: "https://boardprospects.com", category: "Board Roles", description: "Corporate board positions" },
-    { name: "Russell Reynolds", url: "https://russellreynolds.com", category: "Executive Search", description: "C-level executive search" },
-    { name: "Korn Ferry", url: "https://kornferry.com", category: "Executive Search", description: "Leadership consulting & search" },
-    { name: "Spencer Stuart", url: "https://spencerstuart.com", category: "Executive Search", description: "Board & executive search" },
-    
-    // Remote Work Tools & Platforms
-    { name: "Zoom Careers", url: "https://zoom.us/careers", category: "Remote Tools", description: "Video conferencing careers" },
-    { name: "Slack Careers", url: "https://slack.com/careers", category: "Collaboration", description: "Team collaboration platform" },
-    { name: "Notion Careers", url: "https://notion.so/careers", category: "Productivity", description: "Workspace platform careers" },
-    { name: "Figma Careers", url: "https://figma.com/careers", category: "Design Tools", description: "Collaborative design platform" },
-    { name: "Miro Careers", url: "https://miro.com/careers", category: "Visual Collaboration", description: "Online whiteboard platform" },
-    
-    // Startup Ecosystems
-    { name: "F6S Jobs", url: "https://f6s.com/jobs", category: "Startup Ecosystem", description: "Global startup community" },
-    { name: "Founder Groups", url: "https://foundergroups.com", category: "Founder Network", description: "Entrepreneur networking" },
-    { name: "Startup Grind Jobs", url: "https://startupgrind.com/jobs", category: "Startup Community", description: "Entrepreneur community jobs" },
-    { name: "Product Hunt Jobs", url: "https://producthunt.com/jobs", category: "Tech Startups", description: "Innovative product careers" },
-    { name: "Indie Hackers Jobs", url: "https://indiehackers.com/jobs", category: "Indie Startups", description: "Independent maker community" },
-    
-    // International Specific Platforms
-    { name: "Canada Jobs", url: "https://canadajobs.com", category: "Canadian Jobs", description: "Canadian work opportunities" },
-    { name: "USAJOBS", url: "https://usajobs.gov", category: "US Government", description: "US federal employment" },
-    { name: "UK Gov Jobs", url: "https://gov.uk/jobs", category: "UK Government", description: "UK government positions" },
-    { name: "Australia Jobs", url: "https://australiajobs.com", category: "Australian Jobs", description: "Australian job opportunities" },
-    { name: "New Zealand Jobs", url: "https://newzealandjobs.com", category: "NZ Jobs", description: "New Zealand employment" },
-    
-    // Language Learning for Remote Work
+    // Language Learning for Remote Work (Arizona -> Europe)
     { name: "Preply Tutoring", url: "https://preply.com/tutoring-jobs", category: "Language Teaching", description: "Online language tutoring" },
     { name: "iTalki Teaching", url: "https://italki.com/teach", category: "Language Teaching", description: "Language teaching platform" },
     { name: "Verbling Teaching", url: "https://verbling.com/teach", category: "Language Teaching", description: "Professional language tutoring" },
@@ -158,6 +100,40 @@ const UsefulLinks = () => {
     { name: "Glassdoor AI", url: "https://glassdoor.com", category: "Company Insights", description: "AI-powered company research" },
     { name: "Monster AI", url: "https://monster.com", category: "AI Recruitment", description: "AI recruitment technology" },
     
+    // Specialized Remote Platforms
+    { name: "NoDesk", url: "https://nodesk.co", category: "Remote Resources", description: "Remote work resources & jobs" },
+    { name: "Working Nomads", url: "https://workingnomads.co", category: "Digital Nomad", description: "Curated remote job list" },
+    { name: "Remotive", url: "https://remotive.io", category: "Remote Jobs", description: "Remote tech job community" },
+    { name: "JustRemote", url: "https://justremote.co", category: "Remote Jobs", description: "Remote job aggregator" },
+    { name: "Remote Leaf", url: "https://remoteleaf.com", category: "Remote Jobs", description: "Hand-picked remote jobs" },
+    
+    // Design & Creative
+    { name: "Dribbble Jobs", url: "https://dribbble.com/jobs", category: "Design", description: "Creative design opportunities" },
+    { name: "Behance Jobs", url: "https://behance.net/jobboard", category: "Creative", description: "Creative professional network" },
+    { name: "AIGA Design Jobs", url: "https://designjobs.aiga.org", category: "Design", description: "Professional design careers" },
+    { name: "Krop", url: "https://krop.com", category: "Creative", description: "Creative industry job board" },
+    { name: "Working Not Working", url: "https://workingnotworking.com", category: "Creative", description: "Creative freelance network" },
+    
+    // Consulting & Contract Platforms
+    { name: "Catalant", url: "https://catalant.com", category: "Consulting", description: "Expert consulting network" },
+    { name: "10EQS", url: "https://10eqs.com", category: "Consulting", description: "Strategy consulting projects" },
+    { name: "Expert360", url: "https://expert360.com", category: "Consulting", description: "Expert consulting marketplace" },
+    { name: "Clarity", url: "https://clarity.fm", category: "Consulting", description: "On-demand business advice" },
+    { name: "GLG", url: "https://glg.it", category: "Consulting", description: "Global expert insights network" },
+    
+    // Sales & Marketing
+    { name: "SalesJobs", url: "https://salesjobs.com", category: "Sales", description: "Sales professional opportunities" },
+    { name: "MarketingHire", url: "https://marketinghire.com", category: "Marketing", description: "Digital marketing careers" },
+    { name: "Growth Hackers Jobs", url: "https://jobs.growthhackers.com", category: "Growth", description: "Growth marketing roles" },
+    { name: "HubSpot Jobs", url: "https://hubspot.com/jobs", category: "Inbound Marketing", description: "Inbound marketing opportunities" },
+    { name: "Salesforce Talent", url: "https://salesforce.com/company/careers", category: "CRM", description: "Customer relationship careers" },
+    
+    // International Specific Platforms
+    { name: "Canada Jobs", url: "https://canadajobs.com", category: "Canadian Jobs", description: "Canadian work opportunities" },
+    { name: "USAJOBS", url: "https://usajobs.gov", category: "US Government", description: "US federal employment" },
+    { name: "Australia Jobs", url: "https://australiajobs.com", category: "Australian Jobs", description: "Australian job opportunities" },
+    { name: "New Zealand Jobs", url: "https://newzealandjobs.com", category: "NZ Jobs", description: "New Zealand employment" },
+    
     // Specialized Tech Platforms
     { name: "Hired", url: "https://hired.com", category: "Tech Recruiting", description: "Tech talent marketplace" },
     { name: "Vettery", url: "https://vettery.com", category: "Tech Recruiting", description: "Specialist recruiting platform" },
@@ -170,7 +146,14 @@ const UsefulLinks = () => {
     { name: "Nomad List Jobs", url: "https://nomadlist.com/jobs", category: "Digital Nomad", description: "Digital nomad job board" },
     { name: "Remote Work Hub", url: "https://remoteworkhub.com", category: "Remote Resources", description: "Remote work community" },
     { name: "Remote Work Association", url: "https://remotework.org", category: "Remote Advocacy", description: "Remote work advocacy" },
-    { name: "Future of Work", url: "https://futureofwork.org", category: "Future Trends", description: "Work trend analysis" }
+    { name: "Future of Work", url: "https://futureofwork.org", category: "Future Trends", description: "Work trend analysis" },
+    
+    // Additional European Resources
+    { name: "European Job Mobility Portal", url: "https://eures.ec.europa.eu", category: "EU Official", description: "Official EU job mobility network" },
+    { name: "Work in Norway", url: "https://workingnorway.no", category: "Norwegian Jobs", description: "Norway work opportunities" },
+    { name: "Work in Sweden", url: "https://workingsweden.se", category: "Swedish Jobs", description: "Sweden employment portal" },
+    { name: "Jobs in Berlin", url: "https://jobsinberlin.eu", category: "German Jobs", description: "Berlin tech job opportunities" },
+    { name: "Amsterdam Jobs", url: "https://amsterdamjobs.com", category: "Dutch Jobs", description: "Amsterdam employment opportunities" }
   ];
 
   const filteredLinks = aiRemoteJobLinks.filter(link =>
