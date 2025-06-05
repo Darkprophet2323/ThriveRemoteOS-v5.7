@@ -5,6 +5,7 @@ import { BrowserRouter, Routes, Route } from "react-router-dom";
 import axios from "axios";
 import WaitressJobPortal from "./components/WaitressJobPortal";
 import UsefulLinks from "./components/UsefulLinks";
+import UKNaturalWondersViewer from "./components/UKNaturalWondersViewer";
 import LuxuryNewsTicker from "./components/LuxuryNewsTicker";
 import NotepadApp from "./components/NotepadApp";
 import VaultApp from "./components/VaultApp";
