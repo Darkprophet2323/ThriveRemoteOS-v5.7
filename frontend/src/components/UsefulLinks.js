@@ -168,7 +168,7 @@ const UsefulLinks = () => {
     <div className="useful-links-container">
       <div className="links-header">
         <h3>🔗 Useful Links</h3>
-        <p className="links-subtitle">120 AI-Powered Remote Work Platforms with Visa Support</p>
+        <p className="links-subtitle">120+ AI-Powered Remote Work Platforms | Arizona → UK/Europe/Ireland Focus</p>
         <input
           type="text"
           placeholder="Search links..."
