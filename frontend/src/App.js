@@ -604,7 +604,7 @@ const ThriveRemoteDesktop = () => {
 };
 
 // Window Component with enhanced functionality and animations
-const Window = ({ window, onClose, onMinimize, onMaximize, onBringToFront, onMove, onResize }) => {
+const Window = ({ window, isMobile, onClose, onMinimize, onMaximize, onBringToFront, onMove, onResize }) => {
   const [isDragging, setIsDragging] = useState(false);
   const [isResizing, setIsResizing] = useState(false);
   const [dragOffset, setDragOffset] = useState({ x: 0, y: 0 });
