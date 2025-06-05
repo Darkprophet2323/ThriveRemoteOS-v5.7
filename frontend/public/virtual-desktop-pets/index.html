@@ -1,0 +1,432 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>🐾 Desktop Pets - Virtual Companions</title>
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+        
+        body {
+            font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', system-ui, sans-serif;
+            background: linear-gradient(135deg, #74b9ff 0%, #0984e3 100%);
+            min-height: 100vh;
+            overflow: hidden;
+            position: relative;
+        }
+        
+        .control-panel {
+            position: fixed;
+            top: 20px;
+            right: 20px;
+            background: rgba(255, 255, 255, 0.95);
+            backdrop-filter: blur(10px);
+            border-radius: 15px;
+            padding: 20px;
+            box-shadow: 0 8px 32px rgba(0, 0, 0, 0.2);
+            z-index: 1000;
+            min-width: 250px;
+        }
+        
+        .control-panel h2 {
+            margin-bottom: 15px;
+            color: #333;
+            font-size: 1.2rem;
+        }
+        
+        .pet-selector {
+            display: grid;
+            grid-template-columns: repeat(3, 1fr);
+            gap: 10px;
+            margin-bottom: 20px;
+        }
+        
+        .pet-option {
+            background: #f8f9fa;
+            border: 2px solid transparent;
+            border-radius: 10px;
+            padding: 10px;
+            cursor: pointer;
+            text-align: center;
+            transition: all 0.3s ease;
+            font-size: 1.5rem;
+        }
+        
+        .pet-option:hover {
+            border-color: #74b9ff;
+            background: #e3f2fd;
+        }
+        
+        .pet-option.active {
+            border-color: #0984e3;
+            background: #bbdefb;
+        }
+        
+        .controls {
+            display: flex;
+            flex-direction: column;
+            gap: 10px;
+        }
+        
+        .control-btn {
+            background: linear-gradient(45deg, #74b9ff, #0984e3);
+            border: none;
+            color: white;
+            padding: 10px 15px;
+            border-radius: 8px;
+            cursor: pointer;
+            font-size: 0.9rem;
+            transition: all 0.3s ease;
+        }
+        
+        .control-btn:hover {
+            transform: translateY(-1px);
+            box-shadow: 0 4px 12px rgba(0, 0, 0, 0.2);
+        }
+        
+        .back-btn {
+            position: fixed;
+            top: 20px;
+            left: 20px;
+            background: rgba(255, 255, 255, 0.9);
+            border: none;
+            color: #333;
+            padding: 10px 15px;
+            border-radius: 10px;
+            cursor: pointer;
+            text-decoration: none;
+            font-size: 0.9rem;
+            transition: all 0.3s ease;
+            z-index: 1001;
+        }
+        
+        .back-btn:hover {
+            background: rgba(255, 255, 255, 1);
+        }
+        
+        .pet {
+            position: absolute;
+            font-size: 3rem;
+            cursor: pointer;
+            transition: all 0.3s ease;
+            z-index: 500;
+            user-select: none;
+        }
+        
+        .pet:hover {
+            transform: scale(1.1);
+        }
+        
+        .speech-bubble {
+            position: absolute;
+            background: white;
+            border-radius: 15px;
+            padding: 8px 12px;
+            font-size: 0.8rem;
+            color: #333;
+            box-shadow: 0 4px 12px rgba(0, 0, 0, 0.2);
+            white-space: nowrap;
+            z-index: 600;
+            opacity: 0;
+            transform: translateY(10px);
+            transition: all 0.3s ease;
+        }
+        
+        .speech-bubble::after {
+            content: '';
+            position: absolute;
+            bottom: -8px;
+            left: 50%;
+            transform: translateX(-50%);
+            width: 0;
+            height: 0;
+            border-left: 8px solid transparent;
+            border-right: 8px solid transparent;
+            border-top: 8px solid white;
+        }
+        
+        .speech-bubble.show {
+            opacity: 1;
+            transform: translateY(0);
+        }
+        
+        .food {
+            position: absolute;
+            font-size: 1.5rem;
+            pointer-events: none;
+            z-index: 400;
+        }
+        
+        .instructions {
+            position: fixed;
+            bottom: 20px;
+            left: 20px;
+            background: rgba(255, 255, 255, 0.9);
+            border-radius: 10px;
+            padding: 15px;
+            font-size: 0.8rem;
+            color: #333;
+            max-width: 250px;
+        }
+    </style>
+</head>
+<body>
+    <a href="javascript:history.back()" class="back-btn">← Back to ThriveOS</a>
+    
+    <div class="control-panel">
+        <h2>🐾 Pet Controls</h2>
+        <div class="pet-selector">
+            <div class="pet-option active" data-pet="🐱" title="Cat">🐱</div>
+            <div class="pet-option" data-pet="🐶" title="Dog">🐶</div>
+            <div class="pet-option" data-pet="🐰" title="Bunny">🐰</div>
+            <div class="pet-option" data-pet="🐹" title="Hamster">🐹</div>
+            <div class="pet-option" data-pet="🐷" title="Pig">🐷</div>
+            <div class="pet-option" data-pet="🐧" title="Penguin">🐧</div>
+        </div>
+        <div class="controls">
+            <button class="control-btn" onclick="spawnPet()">➕ Add Pet</button>
+            <button class="control-btn" onclick="feedAllPets()">🍖 Feed All</button>
+            <button class="control-btn" onclick="clearAllPets()">🧹 Clear All</button>
+            <button class="control-btn" onclick="playWithPets()">🎾 Play Time</button>
+        </div>
+    </div>
+    
+    <div class="instructions">
+        <strong>Instructions:</strong><br>
+        • Click pets to interact<br>
+        • Drag pets to move them<br>
+        • Pets will wander around<br>
+        • Feed them when hungry<br>
+        • Watch them play!
+    </div>
+
+    <script>
+        let selectedPetType = '🐱';
+        let pets = [];
+        let petCounter = 0;
+
+        const petDialogue = {
+            '🐱': ['Meow!', 'Purr~', '*stretches*', 'Feed me!', '*yawn*'],
+            '🐶': ['Woof!', 'Good human!', '*wags tail*', 'Play with me!', '*pants*'],
+            '🐰': ['Hop hop!', '*nibbles*', 'Carrot please!', '*bounces*', 'So fluffy!'],
+            '🐹': ['Squeak!', '*runs in wheel*', 'Nuts please!', '*stuffs cheeks*', 'So tiny!'],
+            '🐷': ['Oink oink!', '*rolls in mud*', 'Snack time!', '*snorts*', 'So pink!'],
+            '🐧': ['*waddles*', 'Brr! Cold!', 'Fish please!', '*slides on belly*', 'Fancy suit!']
+        };
+
+        // Pet selection
+        document.querySelectorAll('.pet-option').forEach(option => {
+            option.addEventListener('click', () => {
+                document.querySelectorAll('.pet-option').forEach(o => o.classList.remove('active'));
+                option.classList.add('active');
+                selectedPetType = option.dataset.pet;
+            });
+        });
+
+        function spawnPet() {
+            const pet = document.createElement('div');
+            pet.className = 'pet';
+            pet.textContent = selectedPetType;
+            pet.id = `pet-${petCounter++}`;
+            
+            // Random position
+            pet.style.left = Math.random() * (window.innerWidth - 100) + 'px';
+            pet.style.top = Math.random() * (window.innerHeight - 100) + 'px';
+            
+            // Pet properties
+            pet.petData = {
+                type: selectedPetType,
+                hunger: 50,
+                happiness: 50,
+                energy: 100,
+                lastAction: Date.now()
+            };
+            
+            // Event listeners
+            let isDragging = false;
+            let dragOffset = { x: 0, y: 0 };
+            
+            pet.addEventListener('mousedown', (e) => {
+                isDragging = true;
+                dragOffset.x = e.clientX - pet.offsetLeft;
+                dragOffset.y = e.clientY - pet.offsetTop;
+                pet.style.cursor = 'grabbing';
+            });
+            
+            document.addEventListener('mousemove', (e) => {
+                if (isDragging && e.target === pet) {
+                    pet.style.left = e.clientX - dragOffset.x + 'px';
+                    pet.style.top = e.clientY - dragOffset.y + 'px';
+                }
+            });
+            
+            document.addEventListener('mouseup', () => {
+                if (isDragging) {
+                    isDragging = false;
+                    pet.style.cursor = 'pointer';
+                }
+            });
+            
+            pet.addEventListener('click', (e) => {
+                if (!isDragging) {
+                    interactWithPet(pet);
+                }
+            });
+            
+            document.body.appendChild(pet);
+            pets.push(pet);
+            
+            // Start AI behavior
+            startPetBehavior(pet);
+        }
+
+        function interactWithPet(pet) {
+            const dialogue = petDialogue[pet.petData.type];
+            const message = dialogue[Math.floor(Math.random() * dialogue.length)];
+            showSpeechBubble(pet, message);
+            
+            // Increase happiness
+            pet.petData.happiness = Math.min(100, pet.petData.happiness + 10);
+            
+            // Sometimes spawn food
+            if (Math.random() < 0.3) {
+                spawnFood(pet);
+            }
+        }
+
+        function showSpeechBubble(pet, message) {
+            // Remove existing speech bubble
+            const existingBubble = pet.querySelector('.speech-bubble');
+            if (existingBubble) {
+                existingBubble.remove();
+            }
+            
+            const bubble = document.createElement('div');
+            bubble.className = 'speech-bubble';
+            bubble.textContent = message;
+            bubble.style.bottom = '60px';
+            bubble.style.left = '50%';
+            bubble.style.transform = 'translateX(-50%)';
+            
+            pet.appendChild(bubble);
+            
+            setTimeout(() => bubble.classList.add('show'), 10);
+            
+            setTimeout(() => {
+                bubble.classList.remove('show');
+                setTimeout(() => bubble.remove(), 300);
+            }, 2000);
+        }
+
+        function spawnFood(nearPet) {
+            const foods = ['🍖', '🥕', '🐟', '🥜', '🍎', '🦴'];
+            const food = document.createElement('div');
+            food.className = 'food';
+            food.textContent = foods[Math.floor(Math.random() * foods.length)];
+            
+            const petRect = nearPet.getBoundingClientRect();
+            food.style.left = petRect.left + Math.random() * 100 - 50 + 'px';
+            food.style.top = petRect.top + Math.random() * 100 - 50 + 'px';
+            
+            document.body.appendChild(food);
+            
+            // Remove food after 5 seconds
+            setTimeout(() => {
+                if (food.parentNode) {
+                    food.remove();
+                }
+            }, 5000);
+        }
+
+        function startPetBehavior(pet) {
+            const behaviorInterval = setInterval(() => {
+                if (!pet.parentNode) {
+                    clearInterval(behaviorInterval);
+                    return;
+                }
+                
+                // Random movement
+                if (Math.random() < 0.3) {
+                    const newX = Math.max(0, Math.min(window.innerWidth - 60, 
+                        pet.offsetLeft + (Math.random() - 0.5) * 100));
+                    const newY = Math.max(0, Math.min(window.innerHeight - 60, 
+                        pet.offsetTop + (Math.random() - 0.5) * 100));
+                    
+                    pet.style.left = newX + 'px';
+                    pet.style.top = newY + 'px';
+                }
+                
+                // Decrease stats over time
+                pet.petData.hunger = Math.max(0, pet.petData.hunger - 1);
+                pet.petData.energy = Math.max(0, pet.petData.energy - 1);
+                
+                // Random actions
+                if (Math.random() < 0.1) {
+                    const dialogue = petDialogue[pet.petData.type];
+                    const message = dialogue[Math.floor(Math.random() * dialogue.length)];
+                    showSpeechBubble(pet, message);
+                }
+                
+            }, 3000);
+        }
+
+        function feedAllPets() {
+            pets.forEach(pet => {
+                if (pet.parentNode) {
+                    pet.petData.hunger = Math.min(100, pet.petData.hunger + 30);
+                    showSpeechBubble(pet, 'Yummy! Thank you! 😋');
+                    spawnFood(pet);
+                }
+            });
+        }
+
+        function clearAllPets() {
+            pets.forEach(pet => {
+                if (pet.parentNode) {
+                    pet.remove();
+                }
+            });
+            pets = [];
+            
+            // Clear all food items
+            document.querySelectorAll('.food').forEach(food => food.remove());
+        }
+
+        function playWithPets() {
+            pets.forEach(pet => {
+                if (pet.parentNode) {
+                    pet.petData.happiness = Math.min(100, pet.petData.happiness + 20);
+                    pet.petData.energy = Math.max(0, pet.petData.energy - 10);
+                    showSpeechBubble(pet, 'Wheee! So fun! 🎉');
+                    
+                    // Make pet bounce
+                    pet.style.transform = 'scale(1.2) rotate(10deg)';
+                    setTimeout(() => {
+                        pet.style.transform = 'scale(1) rotate(0deg)';
+                    }, 500);
+                }
+            });
+        }
+
+        // Spawn initial pet
+        spawnPet();
+        
+        // Handle window resize
+        window.addEventListener('resize', () => {
+            pets.forEach(pet => {
+                if (pet.parentNode) {
+                    const maxX = window.innerWidth - 60;
+                    const maxY = window.innerHeight - 60;
+                    
+                    if (pet.offsetLeft > maxX) pet.style.left = maxX + 'px';
+                    if (pet.offsetTop > maxY) pet.style.top = maxY + 'px';
+                }
+            });
+        });
+    </script>
+</body>
+</html>
