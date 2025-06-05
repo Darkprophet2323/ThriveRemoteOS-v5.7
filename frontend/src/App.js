@@ -92,11 +92,15 @@ const ThriveRemoteDesktop = () => {
       title,
       content,
       icon,
-      position: { x: 80 + windows.length * 25, y: 80 + windows.length * 25 },
       size,
+      // Center windows on screen
+      position: {
+        x: Math.max(0, (window.innerWidth - size.width) / 2),
+        y: Math.max(0, (window.innerHeight - size.height) / 2)
+      },
+      zIndex: windows.length + 100,
       isMinimized: false,
-      isMaximized: false,
-      zIndex: windows.length + 100
+      isMaximized: false
     };
     setWindows([...windows, newWindow]);
   };
