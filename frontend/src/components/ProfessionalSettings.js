@@ -549,7 +549,7 @@ const ProfessionalSettings = () => {
           {/* Privacy Tab */}
           {activeTab === 'privacy' && (
             <div>
-              <h3 className="text-lg font-semibold mb-4">Privacy & Security</h3>
+              <h3 className="text-sm font-semibold mb-3">Privacy & Security</h3>
               
               <SettingRow 
                 label="Privacy Mode" 
