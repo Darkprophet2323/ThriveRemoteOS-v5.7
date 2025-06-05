@@ -209,14 +209,14 @@ const ProfessionalSettings = () => {
   };
 
   const SettingRow = ({ label, description, children }) => (
-    <div className="flex justify-between items-center py-3 border-b border-gray-200">
+    <div className="flex justify-between items-center py-2 border-b border-gray-200">
       <div className="flex-1">
-        <label className="text-sm font-semibold text-primary">{label}</label>
+        <label className="text-xs font-semibold text-primary">{label}</label>
         {description && (
-          <div className="text-xs text-muted mt-1">{description}</div>
+          <div className="text-xs text-muted mt-1" style={{ fontSize: '0.65rem' }}>{description}</div>
         )}
       </div>
-      <div className="ml-4">
+      <div className="ml-3">
         {children}
       </div>
     </div>
