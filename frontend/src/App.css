@@ -1175,7 +1175,21 @@ body {
   }
 }
 
-/* ===== MOBILE RESPONSIVE DESIGN ===== */
+/* ===== MOBILE MODE ENHANCEMENTS ===== */
+.desktop-environment.mobile-mode {
+  height: calc(var(--vh, 1vh) * 100);
+  overflow: hidden;
+  touch-action: pan-y;
+}
+
+.desktop-environment.mobile-mode .desktop-wallpaper {
+  display: none; /* Hide wallpaper on mobile for performance */
+}
+
+.desktop-environment.mobile-mode::before,
+.desktop-environment.mobile-mode::after {
+  display: none; /* Hide decorative elements on mobile */
+}
 @media (max-width: 768px) {
   .desktop-environment {
     touch-action: manipulation;
