@@ -277,14 +277,7 @@ const ThriveRemoteDesktop = () => {
       )}
 
       {/* Windows */}
-      // Compact content styling for better display
-      const compactContentStyle = {
-        padding: '12px',
-        height: '100%',
-        overflow: 'auto',
-        fontSize: '0.8rem',
-        lineHeight: '1.4'
-      };
+      {windows.map(window => (
         <Window
           key={window.id}
           window={window}
