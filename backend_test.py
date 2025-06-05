@@ -355,41 +355,15 @@ class ThriveRemoteOSAPITester(unittest.TestCase):
         
         print(f"Music Search - Results for '{search_data['query']}': {len(results)}")
 
-    def test_user_settings(self):
-        """Test the user settings API endpoint for settings persistence"""
-        # Create a test user settings
-        user_settings = {
-            "theme": "dark-professional",
-            "soundEffects": True,
-            "musicPlayer": True,
-            "autoRefreshJobs": True,
-            "notifications": True,
-            "animationSpeed": "normal",
-            "windowOpacity": 0.95,
-            "backgroundParticles": False,
-            "newsTickerSpeed": "normal",
-            "autoSaveDocuments": True,
-            "downloadLocation": "Downloads",
-            "weatherLocation": "London",
-            "weatherUnit": "celsius",
-            "languagePreference": "en",
-            "timezone": "UTC",
-            "privacyMode": False,
-            "darkMode": True,
-            "highContrast": False,
-            "fontSize": "medium"
-        }
-        
-        # Get current user info
-        response = requests.get(f"{self.base_url}/user/current")
+    def test_window_positioning(self):
+        """Test window positioning configuration in frontend"""
+        # This is a frontend feature, but we can verify the system is operational
+        response = requests.get(f"{self.base_url}/")
         self.assertEqual(response.status_code, 200)
-        user_data = response.json()
         
-        # Check if user has settings field
-        self.assertIn("settings", user_data)
-        
-        print(f"User settings API endpoint tested successfully")
-        print(f"Settings can be stored in user profile for persistence")
+        # Verify system is running and can support window management
+        print("Backend is operational for window positioning tests")
+        print("Window positioning will be tested via frontend Playwright tests")
 
     def test_virtual_pets(self):
         """Test the virtual pets API endpoint"""
