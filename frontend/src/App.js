@@ -346,13 +346,13 @@ const ThriveRemoteDesktop = () => {
                   <span className="menu-icon">📝</span>Content Manager
                 </div>
                 <div className="menu-item fadeInUp animate-delay-400" onClick={() => { 
-                  handleIconClick('Calculator', '🧮', 'CalculatorApp', 224, 350); 
+                  handleIconClick('Calculator', '🧮', 'CalculatorApp', 210, 280); 
                   setShowStartMenu(false); 
                 }}>
                   <span className="menu-icon">🧮</span>Calculator
                 </div>
                 <div className="menu-item fadeInUp animate-delay-500" onClick={() => { 
-                  handleIconClick('System Status', '📊', 'SystemStatusApp', 420, 315); 
+                  handleIconClick('System Status', '📊', 'SystemStatusApp', 350, 245); 
                   setShowStartMenu(false); 
                 }}>
                   <span className="menu-icon">📊</span>System Status
