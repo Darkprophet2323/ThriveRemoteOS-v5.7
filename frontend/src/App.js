@@ -234,6 +234,11 @@ const ThriveRemoteDesktop = () => {
     return () => clearInterval(timeInterval);
   }, []);
 
+  // Get next Z-index for window layering
+  const getNextZIndex = () => {
+    return Math.max(...windows.map(w => w.zIndex || 100), 100) + 1;
+  };
+
   const createWindow = (id, title, content, icon = "🖥️", size = { width: 210, height: 140 }) => {
     sounds.playWindowOpen();
     
