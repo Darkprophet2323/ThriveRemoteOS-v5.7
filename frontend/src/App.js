@@ -178,9 +178,12 @@ const ThriveRemoteDesktop = () => {
     ));
   };
 
-  // Enhanced desktop icon click handler with animations
+  // Enhanced desktop icon click handler with animations and mobile support
   const handleIconClick = (title, icon, componentName, width = 245, height = 175) => {
     sounds.playClick();
+    
+    // Mobile-responsive sizing
+    const finalSize = getMobileWindowSize(width, height);
     
     // Component mapping with all working applications
     const componentMap = {
