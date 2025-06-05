@@ -1,0 +1,207 @@
+test_root_endpoint (__main__.ThriveRemoteOSAPITester.test_root_endpoint)
+Test the root API endpoint and verify ThriveRemoteOS v5.5 branding ... 
+🔍 Running test: test_root_endpoint
+FAIL
+✅ Test passed
+test_system_performance (__main__.ThriveRemoteOSAPITester.test_system_performance)
+Test the system performance API endpoint for System Status App ... 
+🔍 Running test: test_system_performance
+FAIL
+✅ Test passed
+test_weather_enhanced (__main__.ThriveRemoteOSAPITester.test_weather_enhanced)
+Test the enhanced weather API endpoint ... 
+🔍 Running test: test_weather_enhanced
+FAIL
+✅ Test passed
+test_news_live (__main__.ThriveRemoteOSAPITester.test_news_live)
+Test the live news API endpoint ... 
+🔍 Running test: test_news_live
+FAIL
+✅ Test passed
+test_relocateme_opportunities (__main__.ThriveRemoteOSAPITester.test_relocateme_opportunities)
+Test the RelocateMe opportunities API endpoint ... 
+🔍 Running test: test_relocateme_opportunities
+FAIL
+✅ Test passed
+test_downloads_api (__main__.ThriveRemoteOSAPITester.test_downloads_api)
+Test the downloads API endpoints ... 
+🔍 Running test: test_downloads_api
+FAIL
+✅ Test passed
+test_dashboard_stats (__main__.ThriveRemoteOSAPITester.test_dashboard_stats)
+Test the dashboard stats API endpoint ... 
+🔍 Running test: test_dashboard_stats
+FAIL
+✅ Test passed
+test_dashboard_live_stats (__main__.ThriveRemoteOSAPITester.test_dashboard_live_stats)
+Test the live dashboard stats API endpoint ... 
+🔍 Running test: test_dashboard_live_stats
+FAIL
+✅ Test passed
+test_content_ai_tools (__main__.ThriveRemoteOSAPITester.test_content_ai_tools)
+Test the AI tools content API endpoint for AI Job Links Portal ... 
+🔍 Running test: test_content_ai_tools
+FAIL
+✅ Test passed
+test_jobs_live (__main__.ThriveRemoteOSAPITester.test_jobs_live)
+Test the live jobs API endpoint ... 
+🔍 Running test: test_jobs_live
+FAIL
+✅ Test passed
+test_music_playlist (__main__.ThriveRemoteOSAPITester.test_music_playlist)
+Test the music playlist API endpoint for Media Player App ... 
+🔍 Running test: test_music_playlist
+FAIL
+✅ Test passed
+test_music_trending (__main__.ThriveRemoteOSAPITester.test_music_trending)
+Test the trending music API endpoint for Media Player App ... 
+🔍 Running test: test_music_trending
+FAIL
+✅ Test passed
+test_music_search (__main__.ThriveRemoteOSAPITester.test_music_search)
+Test the music search API endpoint for Media Player App ... 
+🔍 Running test: test_music_search
+FAIL
+✅ Test passed
+test_virtual_pets (__main__.ThriveRemoteOSAPITester.test_virtual_pets)
+Test the virtual pets API endpoint ... 
+🔍 Running test: test_virtual_pets
+FAIL
+✅ Test passed
+
+======================================================================
+FAIL: test_root_endpoint (__main__.ThriveRemoteOSAPITester.test_root_endpoint)
+Test the root API endpoint and verify ThriveRemoteOS v5.5 branding
+----------------------------------------------------------------------
+Traceback (most recent call last):
+  File "/app/backend_test.py", line 29, in test_root_endpoint
+    self.assertEqual(response.status_code, 200)
+AssertionError: 502 != 200
+
+======================================================================
+FAIL: test_system_performance (__main__.ThriveRemoteOSAPITester.test_system_performance)
+Test the system performance API endpoint for System Status App
+----------------------------------------------------------------------
+Traceback (most recent call last):
+  File "/app/backend_test.py", line 50, in test_system_performance
+    self.assertEqual(response.status_code, 200)
+AssertionError: 502 != 200
+
+======================================================================
+FAIL: test_weather_enhanced (__main__.ThriveRemoteOSAPITester.test_weather_enhanced)
+Test the enhanced weather API endpoint
+----------------------------------------------------------------------
+Traceback (most recent call last):
+  File "/app/backend_test.py", line 73, in test_weather_enhanced
+    self.assertEqual(response.status_code, 200)
+AssertionError: 404 != 200
+
+======================================================================
+FAIL: test_news_live (__main__.ThriveRemoteOSAPITester.test_news_live)
+Test the live news API endpoint
+----------------------------------------------------------------------
+Traceback (most recent call last):
+  File "/app/backend_test.py", line 101, in test_news_live
+    self.assertEqual(response.status_code, 200)
+AssertionError: 502 != 200
+
+======================================================================
+FAIL: test_relocateme_opportunities (__main__.ThriveRemoteOSAPITester.test_relocateme_opportunities)
+Test the RelocateMe opportunities API endpoint
+----------------------------------------------------------------------
+Traceback (most recent call last):
+  File "/app/backend_test.py", line 124, in test_relocateme_opportunities
+    self.assertEqual(response.status_code, 200)
+AssertionError: 404 != 200
+
+======================================================================
+FAIL: test_downloads_api (__main__.ThriveRemoteOSAPITester.test_downloads_api)
+Test the downloads API endpoints
+----------------------------------------------------------------------
+Traceback (most recent call last):
+  File "/app/backend_test.py", line 164, in test_downloads_api
+    self.assertEqual(response.status_code, 200)
+AssertionError: 404 != 200
+
+======================================================================
+FAIL: test_dashboard_stats (__main__.ThriveRemoteOSAPITester.test_dashboard_stats)
+Test the dashboard stats API endpoint
+----------------------------------------------------------------------
+Traceback (most recent call last):
+  File "/app/backend_test.py", line 222, in test_dashboard_stats
+    self.assertEqual(response.status_code, 200)
+AssertionError: 404 != 200
+
+======================================================================
+FAIL: test_dashboard_live_stats (__main__.ThriveRemoteOSAPITester.test_dashboard_live_stats)
+Test the live dashboard stats API endpoint
+----------------------------------------------------------------------
+Traceback (most recent call last):
+  File "/app/backend_test.py", line 236, in test_dashboard_live_stats
+    self.assertEqual(response.status_code, 200)
+AssertionError: 404 != 200
+
+======================================================================
+FAIL: test_content_ai_tools (__main__.ThriveRemoteOSAPITester.test_content_ai_tools)
+Test the AI tools content API endpoint for AI Job Links Portal
+----------------------------------------------------------------------
+Traceback (most recent call last):
+  File "/app/backend_test.py", line 250, in test_content_ai_tools
+    self.assertEqual(response.status_code, 200)
+AssertionError: 404 != 200
+
+======================================================================
+FAIL: test_jobs_live (__main__.ThriveRemoteOSAPITester.test_jobs_live)
+Test the live jobs API endpoint
+----------------------------------------------------------------------
+Traceback (most recent call last):
+  File "/app/backend_test.py", line 272, in test_jobs_live
+    self.assertEqual(response.status_code, 200)
+AssertionError: 404 != 200
+
+======================================================================
+FAIL: test_music_playlist (__main__.ThriveRemoteOSAPITester.test_music_playlist)
+Test the music playlist API endpoint for Media Player App
+----------------------------------------------------------------------
+Traceback (most recent call last):
+  File "/app/backend_test.py", line 298, in test_music_playlist
+    self.assertEqual(response.status_code, 200)
+AssertionError: 404 != 200
+
+======================================================================
+FAIL: test_music_trending (__main__.ThriveRemoteOSAPITester.test_music_trending)
+Test the trending music API endpoint for Media Player App
+----------------------------------------------------------------------
+Traceback (most recent call last):
+  File "/app/backend_test.py", line 324, in test_music_trending
+    self.assertEqual(response.status_code, 200)
+AssertionError: 404 != 200
+
+======================================================================
+FAIL: test_music_search (__main__.ThriveRemoteOSAPITester.test_music_search)
+Test the music search API endpoint for Media Player App
+----------------------------------------------------------------------
+Traceback (most recent call last):
+  File "/app/backend_test.py", line 344, in test_music_search
+    self.assertEqual(response.status_code, 200)
+AssertionError: 404 != 200
+
+======================================================================
+FAIL: test_virtual_pets (__main__.ThriveRemoteOSAPITester.test_virtual_pets)
+Test the virtual pets API endpoint
+----------------------------------------------------------------------
+Traceback (most recent call last):
+  File "/app/backend_test.py", line 360, in test_virtual_pets
+    self.assertEqual(response.status_code, 200)
+AssertionError: 404 != 200
+
+----------------------------------------------------------------------
+Ran 14 tests in 90.627s
+
+FAILED (failures=14)
+
+📊 Tests summary:
+Tests run: 14
+Tests passed: 0
+Tests failed: 14
+Tests with errors: 0

@@ -1,0 +1,106 @@
+test_root_endpoint (__main__.ThriveRemoteOSAPITester.test_root_endpoint)
+Test the root API endpoint and verify ThriveRemoteOS v5.5 branding ... 
+🔍 Running test: test_root_endpoint
+API Version: ThriveRemoteOS API v5.5 - AI Job Entertainment Platform
+New in v5.5: AI Job Links Portal, Enhanced Entertainment, 25+ AI Job Platforms
+✅ Test passed
+ok
+test_system_performance (__main__.ThriveRemoteOSAPITester.test_system_performance)
+Test the system performance API endpoint for System Status App ... 
+🔍 Running test: test_system_performance
+System Performance - CPU: 63.5%, Memory: 31.2%
+API Response Time: 63ms, Error Rate: 0.4%
+✅ Test passed
+ok
+test_weather_enhanced (__main__.ThriveRemoteOSAPITester.test_weather_enhanced)
+Test the enhanced weather API endpoint ... 
+🔍 Running test: test_weather_enhanced
+Weather for New York: 12°C, Snow
+Weather for London: 10°C, Mist
+Weather for Tokyo: 13°C, Snow
+✅ Test passed
+ok
+test_news_live (__main__.ThriveRemoteOSAPITester.test_news_live)
+Test the live news API endpoint ... 
+🔍 Running test: test_news_live
+Live News: 5 items available
+First news item: AI Revolution Transforms Remote Work Industry
+✅ Test passed
+ok
+test_relocateme_opportunities (__main__.ThriveRemoteOSAPITester.test_relocateme_opportunities)
+Test the RelocateMe opportunities API endpoint ... 
+🔍 Running test: test_relocateme_opportunities
+RelocateMe: 3 opportunities available
+First opportunity: Senior Software Engineer - Berlin Tech Hub at EuroTech Solutions GmbH in Berlin, Germany
+✅ Test passed
+ok
+test_downloads_api (__main__.ThriveRemoteOSAPITester.test_downloads_api)
+Test the downloads API endpoints ... 
+🔍 Running test: test_downloads_api
+Created download with ID: 79a78b23-a556-42cd-8b42-ed11721b1a1c
+Download workflow tested successfully
+✅ Test passed
+ok
+test_dashboard_stats (__main__.ThriveRemoteOSAPITester.test_dashboard_stats)
+Test the dashboard stats API endpoint ... 
+🔍 Running test: test_dashboard_stats
+Dashboard Stats - Productivity: 15, Streak: 1 days
+✅ Test passed
+ok
+test_dashboard_live_stats (__main__.ThriveRemoteOSAPITester.test_dashboard_live_stats)
+Test the live dashboard stats API endpoint ... 
+🔍 Running test: test_dashboard_live_stats
+Live Stats - Remote Opportunities: 1200, Active Users: 52
+✅ Test passed
+ok
+test_content_ai_tools (__main__.ThriveRemoteOSAPITester.test_content_ai_tools)
+Test the AI tools content API endpoint for AI Job Links Portal ... 
+🔍 Running test: test_content_ai_tools
+AI Tools - Total: 120, Categories: 12
+Featured Tools: AI Apply, Resume Worded, Interview Warmup, LinkedIn Jobs AI
+✅ Test passed
+ok
+test_jobs_live (__main__.ThriveRemoteOSAPITester.test_jobs_live)
+Test the live jobs API endpoint ... 
+🔍 Running test: test_jobs_live
+Live Jobs - Total: 2, Source: live_multi_source_mongodb
+First job: Remote Customer Service Representative at Hospitality Solutions Inc.
+✅ Test passed
+ok
+test_music_playlist (__main__.ThriveRemoteOSAPITester.test_music_playlist)
+Test the music playlist API endpoint for Media Player App ... 
+🔍 Running test: test_music_playlist
+Music Playlist - Tracks: 5
+First track: Noir Nights by Sophisticated Beats
+✅ Test passed
+ok
+test_music_trending (__main__.ThriveRemoteOSAPITester.test_music_trending)
+Test the trending music API endpoint for Media Player App ... 
+🔍 Running test: test_music_trending
+Trending Music - Tracks: 2
+✅ Test passed
+ok
+test_music_search (__main__.ThriveRemoteOSAPITester.test_music_search)
+Test the music search API endpoint for Media Player App ... 
+🔍 Running test: test_music_search
+Music Search - Results for 'jazz': 2
+✅ Test passed
+ok
+test_virtual_pets (__main__.ThriveRemoteOSAPITester.test_virtual_pets)
+Test the virtual pets API endpoint ... 
+🔍 Running test: test_virtual_pets
+Virtual Pets - Total: 2
+Pet Types: cosmic_pets, desktop_pets
+✅ Test passed
+ok
+
+----------------------------------------------------------------------
+Ran 14 tests in 1.698s
+
+OK
+
+📊 Tests summary:
+Tests run: 14
+Tests passed: 14
+Tests failed: 0
+Tests with errors: 0
