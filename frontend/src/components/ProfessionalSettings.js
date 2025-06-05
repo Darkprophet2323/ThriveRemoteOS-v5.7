@@ -308,24 +308,24 @@ const ProfessionalSettings = () => {
       </div>
 
       {/* Tab Navigation */}
-      <div className="flex gap-1 mb-6 border-b border-gray-200">
+      <div className="flex gap-1 mb-3 border-b border-gray-200">
         {[
           { id: 'appearance', label: 'Appearance', icon: 'palette' },
           { id: 'system', label: 'System', icon: 'settings' },
-          { id: 'accessibility', label: 'Accessibility', icon: 'accessibility' },
+          { id: 'accessibility', label: 'Access', icon: 'accessibility' },
           { id: 'privacy', label: 'Privacy', icon: 'security' },
           { id: 'advanced', label: 'Advanced', icon: 'tune' }
         ].map(tab => (
           <button
             key={tab.id}
             onClick={() => setActiveTab(tab.id)}
-            className={`px-4 py-2 text-sm font-medium rounded-t-lg border-b-2 transition-colors ${
+            className={`px-3 py-1 text-xs font-medium rounded-t-lg border-b-2 transition-colors ${
               activeTab === tab.id
                 ? 'text-blue-600 border-blue-600 bg-blue-50'
                 : 'text-gray-500 border-transparent hover:text-gray-700 hover:border-gray-300'
             }`}
           >
-            <span className="material-icons-outlined text-sm mr-2">{tab.icon}</span>
+            <span className="material-icons-outlined text-xs mr-1">{tab.icon}</span>
             {tab.label}
           </button>
         ))}
