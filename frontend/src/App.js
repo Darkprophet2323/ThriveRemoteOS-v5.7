@@ -215,9 +215,6 @@ const ThriveRemoteDesktop = () => {
       {/* Professional News Ticker */}
       <LuxuryNewsTicker />
 
-      {/* Luxury Music Player Integration */}
-      <LuxuryMusicPlayer />
-
       {/* Desktop Background */}
       <div className="desktop-wallpaper"></div>
 
