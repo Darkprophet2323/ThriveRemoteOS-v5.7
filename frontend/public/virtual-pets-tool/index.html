@@ -29,11 +29,51 @@
             background: rgba(255, 255, 255, 0.1);
             backdrop-filter: blur(10px);
             border-radius: 20px;
-            padding: 30px;
-            max-width: 600px;
-            width: 90%;
+            padding: 20px;
+            max-width: 500px;
+            width: calc(100% - 20px);
             text-align: center;
             box-shadow: 0 8px 32px rgba(0, 0, 0, 0.3);
+        }
+        
+        @media (max-width: 480px) {
+            .game-container {
+                padding: 15px;
+                border-radius: 15px;
+                max-width: 100%;
+                width: calc(100vw - 20px);
+            }
+            
+            h1 {
+                font-size: 2rem !important;
+                margin-bottom: 1rem !important;
+            }
+            
+            .pet-display {
+                padding: 20px !important;
+                margin: 15px 0 !important;
+                min-height: 120px !important;
+            }
+            
+            .pet-emoji {
+                font-size: 3rem !important;
+                margin-bottom: 10px !important;
+            }
+            
+            .pet-stats {
+                gap: 8px !important;
+                margin: 15px 0 !important;
+            }
+            
+            .actions {
+                gap: 8px !important;
+            }
+            
+            .action-btn {
+                padding: 10px 15px !important;
+                font-size: 0.9rem !important;
+                border-radius: 20px !important;
+            }
         }
         
         h1 {
