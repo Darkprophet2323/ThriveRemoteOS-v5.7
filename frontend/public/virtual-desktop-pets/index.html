@@ -29,10 +29,62 @@
             background: rgba(255, 255, 255, 0.95);
             backdrop-filter: blur(10px);
             border-radius: 15px;
-            padding: 20px;
+            padding: 15px;
             box-shadow: 0 8px 32px rgba(0, 0, 0, 0.2);
             z-index: 1000;
-            min-width: 250px;
+            min-width: 200px;
+            max-width: 300px;
+        }
+        
+        @media (max-width: 768px) {
+            .control-panel {
+                position: fixed;
+                bottom: 20px;
+                left: 50%;
+                transform: translateX(-50%);
+                top: auto;
+                right: auto;
+                width: calc(100vw - 40px);
+                max-width: 400px;
+                min-width: auto;
+                padding: 12px;
+                border-radius: 12px;
+            }
+            
+            .control-panel h2 {
+                font-size: 1rem !important;
+                margin-bottom: 10px !important;
+            }
+            
+            .pet-selector {
+                grid-template-columns: repeat(6, 1fr) !important;
+                gap: 6px !important;
+                margin-bottom: 15px !important;
+            }
+            
+            .pet-option {
+                padding: 6px !important;
+                font-size: 1.2rem !important;
+                border-radius: 6px !important;
+            }
+            
+            .controls {
+                flex-direction: row !important;
+                gap: 6px !important;
+                flex-wrap: wrap;
+            }
+            
+            .control-btn {
+                flex: 1;
+                min-width: 0;
+                padding: 8px 10px !important;
+                font-size: 0.8rem !important;
+                white-space: nowrap;
+            }
+            
+            .instructions {
+                display: none !important;
+            }
         }
         
         .control-panel h2 {
