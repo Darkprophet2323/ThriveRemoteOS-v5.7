@@ -481,7 +481,7 @@ const ProfessionalSettings = () => {
           {/* Accessibility Tab */}
           {activeTab === 'accessibility' && (
             <div>
-              <h3 className="text-lg font-semibold mb-4">Accessibility Options</h3>
+              <h3 className="text-sm font-semibold mb-3">Accessibility Options</h3>
               
               <SettingRow 
                 label="High Contrast Mode" 
