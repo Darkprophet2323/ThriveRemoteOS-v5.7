@@ -236,21 +236,26 @@ const ThriveRemoteDesktop = () => {
 
   const createWindow = (id, title, content, icon = "🖥️", size = { width: 210, height: 140 }) => {
     sounds.playWindowOpen();
+    
+    // Use mobile-responsive sizing
+    const finalSize = getMobileWindowSize(size.width, size.height);
+    
     const newWindow = {
       id,
       title,
       content,
       icon,
-      size,
-      // Center windows on screen
-      position: {
-        x: Math.max(0, (window.innerWidth - size.width) / 2),
-        y: Math.max(0, (window.innerHeight - size.height) / 2)
+      size: finalSize,
+      // Center windows on screen (or fullscreen on mobile)
+      position: isMobile ? { x: 0, y: 24 } : {
+        x: Math.max(0, (window.innerWidth - finalSize.width) / 2),
+        y: Math.max(0, (window.innerHeight - finalSize.height) / 2)
       },
-      zIndex: windows.length + 100,
+      zIndex: getNextZIndex(),
       isMinimized: false,
-      isMaximized: false
+      isMaximized: isMobile // Auto-maximize on mobile
     };
+
     setWindows([...windows, newWindow]);
   };
 
