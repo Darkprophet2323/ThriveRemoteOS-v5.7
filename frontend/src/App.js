@@ -246,20 +246,26 @@ const ThriveRemoteDesktop = () => {
     // Use mobile-responsive sizing
     const finalSize = getMobileWindowSize(size.width, size.height);
     
+    // Calculate cascading position for desktop (like Raspberry Pi)
+    const getDesktopPosition = () => {
+      const cascade = windows.length * 30; // 30px offset for each window
+      return {
+        x: Math.min(100 + cascade, window.innerWidth - finalSize.width - 50),
+        y: Math.min(60 + cascade, window.innerHeight - finalSize.height - 100) // Start after news ticker
+      };
+    };
+    
     const newWindow = {
       id,
       title,
       content,
       icon,
       size: finalSize,
-      // Mobile-optimized positioning - ensure windows are visible
+      // Mobile vs Desktop positioning
       position: isMobile ? { 
         x: 0, 
         y: 28 // Account for news ticker
-      } : {
-        x: Math.max(0, (window.innerWidth - finalSize.width) / 2),
-        y: Math.max(0, (window.innerHeight - finalSize.height) / 2)
-      },
+      } : getDesktopPosition(),
       zIndex: getNextZIndex(),
       isMinimized: false,
       isMaximized: isMobile // Auto-maximize on mobile for full visibility
