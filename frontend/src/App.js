@@ -447,6 +447,7 @@ const ThriveRemoteDesktop = () => {
         <Window
           key={window.id}
           window={window}
+          isMobile={isMobile}
           onClose={() => closeWindow(window.id)}
           onMinimize={() => minimizeWindow(window.id)}
           onMaximize={() => maximizeWindow(window.id)}
