@@ -64,6 +64,47 @@ const ThriveRemoteDesktop = () => {
     };
   }, []);
 
+  // Handle mobile touch events
+  useEffect(() => {
+    if (isMobile) {
+      // Add touch event listeners for mobile interactions
+      const handleTouchStart = (e) => {
+        // Store touch start position for swipe detection
+        const touch = e.touches[0];
+        window.touchStartX = touch.clientX;
+        window.touchStartY = touch.clientY;
+      };
+
+      const handleTouchEnd = (e) => {
+        // Handle swipe gestures on mobile
+        if (window.touchStartX !== undefined && window.touchStartY !== undefined) {
+          const touch = e.changedTouches[0];
+          const deltaX = touch.clientX - window.touchStartX;
+          const deltaY = touch.clientY - window.touchStartY;
+          
+          // Swipe up from bottom to open start menu
+          if (deltaY < -50 && touch.clientY > window.innerHeight - 100) {
+            setShowStartMenu(true);
+          }
+          
+          // Clear touch positions
+          window.touchStartX = undefined;
+          window.touchStartY = undefined;
+        }
+      };
+
+      document.addEventListener('touchstart', handleTouchStart, { passive: true });
+      document.addEventListener('touchend', handleTouchEnd, { passive: true });
+
+      return () => {
+        document.removeEventListener('touchstart', handleTouchStart);
+        document.removeEventListener('touchend', handleTouchEnd);
+      };
+    }
+  }, [isMobile]);
+
+  // Time update effect
+
   // Mobile-specific window sizing
   const getMobileWindowSize = (defaultWidth, defaultHeight) => {
     if (!isMobile) return { width: defaultWidth, height: defaultHeight };
